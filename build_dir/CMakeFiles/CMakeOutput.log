@@ -1,0 +1,570 @@
+The system is: Linux - 2.6.32-754.35.1.el6.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /cm/local/apps/gcc/6.1.0/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/3.6.1/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /cm/local/apps/gcc/6.1.0/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/3.6.1/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_e179b/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_e179b.dir/build.make CMakeFiles/cmTC_e179b.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e179b.dir/testCCompiler.c.o
+/cm/local/apps/gcc/6.1.0/bin/gcc     -o CMakeFiles/cmTC_e179b.dir/testCCompiler.c.o   -c /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_e179b
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_e179b.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/gcc       CMakeFiles/cmTC_e179b.dir/testCCompiler.c.o  -o cmTC_e179b -rdynamic 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_05bb1/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_05bb1.dir/build.make CMakeFiles/cmTC_05bb1.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_05bb1.dir/CMakeCCompilerABI.c.o
+/cm/local/apps/gcc/6.1.0/bin/gcc     -o CMakeFiles/cmTC_05bb1.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake3/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_05bb1
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_05bb1.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/gcc      -v CMakeFiles/cmTC_05bb1.dir/CMakeCCompilerABI.c.o  -o cmTC_05bb1 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/cm/local/apps/gcc/6.1.0/bin/gcc
+COLLECT_LTO_WRAPPER=/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../gcc-6.1.0/configure --prefix=/cm/local/apps/gcc/6.1.0 --enable-languages=c,c++,fortran --with-gmp-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-gmp --with-gmp-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-gmp/.libs --with-mpc-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpc/src --with-mpc-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpc/src/.libs --with-mpfr-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpfr/src --with-mpfr-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpfr/src/.libs
+Thread model: posix
+gcc version 6.1.0 (GCC) 
+COMPILER_PATH=/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/cm/local/apps/cuda/libs/current/lib64/../lib64/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/local/apps/cuda/libs/current/lib64/:/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_05bb1' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_05bb1 /usr/lib/../lib64/crt1.o /usr/lib/../lib64/crti.o /cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtbegin.o -L/cm/local/apps/cuda/libs/current/lib64/../lib64 -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0 -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cm/local/apps/cuda/libs/current/lib64 -L/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../.. CMakeFiles/cmTC_05bb1.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtend.o /usr/lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_05bb1' '-rdynamic' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_05bb1/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_05bb1.dir/build.make CMakeFiles/cmTC_05bb1.dir/build]
+  ignore line: [gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_05bb1.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/cm/local/apps/gcc/6.1.0/bin/gcc     -o CMakeFiles/cmTC_05bb1.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake3/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_05bb1]
+  ignore line: [/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_05bb1.dir/link.txt --verbose=1]
+  ignore line: [/cm/local/apps/gcc/6.1.0/bin/gcc      -v CMakeFiles/cmTC_05bb1.dir/CMakeCCompilerABI.c.o  -o cmTC_05bb1 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/cm/local/apps/gcc/6.1.0/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../gcc-6.1.0/configure --prefix=/cm/local/apps/gcc/6.1.0 --enable-languages=c,c++,fortran --with-gmp-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-gmp --with-gmp-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-gmp/.libs --with-mpc-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpc/src --with-mpc-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpc/src/.libs --with-mpfr-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpfr/src --with-mpfr-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpfr/src/.libs]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 6.1.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/cm/local/apps/cuda/libs/current/lib64/../lib64/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/local/apps/cuda/libs/current/lib64/:/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_05bb1' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_05bb1 /usr/lib/../lib64/crt1.o /usr/lib/../lib64/crti.o /cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtbegin.o -L/cm/local/apps/cuda/libs/current/lib64/../lib64 -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0 -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cm/local/apps/cuda/libs/current/lib64 -L/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../.. CMakeFiles/cmTC_05bb1.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtend.o /usr/lib/../lib64/crtn.o]
+    arg [/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_05bb1] ==> ignore
+    arg [/usr/lib/../lib64/crt1.o] ==> ignore
+    arg [/usr/lib/../lib64/crti.o] ==> ignore
+    arg [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtbegin.o] ==> ignore
+    arg [-L/cm/local/apps/cuda/libs/current/lib64/../lib64] ==> dir [/cm/local/apps/cuda/libs/current/lib64/../lib64]
+    arg [-L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0] ==> dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0]
+    arg [-L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64] ==> dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/cm/local/apps/cuda/libs/current/lib64] ==> dir [/cm/local/apps/cuda/libs/current/lib64]
+    arg [-L/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib] ==> dir [/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib]
+    arg [-L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../..] ==> dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../..]
+    arg [CMakeFiles/cmTC_05bb1.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtend.o] ==> ignore
+    arg [/usr/lib/../lib64/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/cm/local/apps/cuda/libs/current/lib64/../lib64] ==> [/cm/local/apps/cuda/libs/current/lib64]
+  collapse library dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0] ==> [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0]
+  collapse library dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64] ==> [/cm/local/apps/gcc/6.1.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/cm/local/apps/cuda/libs/current/lib64] ==> [/cm/local/apps/cuda/libs/current/lib64]
+  collapse library dir [/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib] ==> [/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib]
+  collapse library dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../..] ==> [/cm/local/apps/gcc/6.1.0/lib]
+  implicit libs: [c]
+  implicit dirs: [/cm/local/apps/cuda/libs/current/lib64;/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0;/cm/local/apps/gcc/6.1.0/lib64;/lib64;/usr/lib64;/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib;/cm/local/apps/gcc/6.1.0/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_11a3c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_11a3c.dir/build.make CMakeFiles/cmTC_11a3c.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_11a3c.dir/feature_tests.c.o
+/cm/local/apps/gcc/6.1.0/bin/gcc    -std=c11 -o CMakeFiles/cmTC_11a3c.dir/feature_tests.c.o   -c /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/feature_tests.c
+Linking C executable cmTC_11a3c
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_11a3c.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/gcc       CMakeFiles/cmTC_11a3c.dir/feature_tests.c.o  -o cmTC_11a3c -rdynamic 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_102fb/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_102fb.dir/build.make CMakeFiles/cmTC_102fb.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_102fb.dir/feature_tests.c.o
+/cm/local/apps/gcc/6.1.0/bin/gcc    -std=c99 -o CMakeFiles/cmTC_102fb.dir/feature_tests.c.o   -c /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/feature_tests.c
+Linking C executable cmTC_102fb
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_102fb.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/gcc       CMakeFiles/cmTC_102fb.dir/feature_tests.c.o  -o cmTC_102fb -rdynamic 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_e644e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_e644e.dir/build.make CMakeFiles/cmTC_e644e.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e644e.dir/feature_tests.c.o
+/cm/local/apps/gcc/6.1.0/bin/gcc    -std=c90 -o CMakeFiles/cmTC_e644e.dir/feature_tests.c.o   -c /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/feature_tests.c
+Linking C executable cmTC_e644e
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_e644e.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/gcc       CMakeFiles/cmTC_e644e.dir/feature_tests.c.o  -o cmTC_e644e -rdynamic 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_bd5f1/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_bd5f1.dir/build.make CMakeFiles/cmTC_bd5f1.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_bd5f1.dir/testCXXCompiler.cxx.o
+/cm/local/apps/gcc/6.1.0/bin/c++      -o CMakeFiles/cmTC_bd5f1.dir/testCXXCompiler.cxx.o -c /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_bd5f1
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_bd5f1.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/c++        CMakeFiles/cmTC_bd5f1.dir/testCXXCompiler.cxx.o  -o cmTC_bd5f1 -rdynamic 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_daf60/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_daf60.dir/build.make CMakeFiles/cmTC_daf60.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_daf60.dir/CMakeCXXCompilerABI.cpp.o
+/cm/local/apps/gcc/6.1.0/bin/c++      -o CMakeFiles/cmTC_daf60.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake3/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_daf60
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_daf60.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/c++       -v CMakeFiles/cmTC_daf60.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_daf60 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/cm/local/apps/gcc/6.1.0/bin/c++
+COLLECT_LTO_WRAPPER=/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../gcc-6.1.0/configure --prefix=/cm/local/apps/gcc/6.1.0 --enable-languages=c,c++,fortran --with-gmp-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-gmp --with-gmp-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-gmp/.libs --with-mpc-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpc/src --with-mpc-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpc/src/.libs --with-mpfr-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpfr/src --with-mpfr-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpfr/src/.libs
+Thread model: posix
+gcc version 6.1.0 (GCC) 
+COMPILER_PATH=/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/cm/local/apps/cuda/libs/current/lib64/../lib64/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/local/apps/cuda/libs/current/lib64/:/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_daf60' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_daf60 /usr/lib/../lib64/crt1.o /usr/lib/../lib64/crti.o /cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtbegin.o -L/cm/local/apps/cuda/libs/current/lib64/../lib64 -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0 -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cm/local/apps/cuda/libs/current/lib64 -L/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../.. CMakeFiles/cmTC_daf60.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtend.o /usr/lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_daf60' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_daf60/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_daf60.dir/build.make CMakeFiles/cmTC_daf60.dir/build]
+  ignore line: [gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_daf60.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/cm/local/apps/gcc/6.1.0/bin/c++      -o CMakeFiles/cmTC_daf60.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake3/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_daf60]
+  ignore line: [/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_daf60.dir/link.txt --verbose=1]
+  ignore line: [/cm/local/apps/gcc/6.1.0/bin/c++       -v CMakeFiles/cmTC_daf60.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_daf60 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/cm/local/apps/gcc/6.1.0/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../gcc-6.1.0/configure --prefix=/cm/local/apps/gcc/6.1.0 --enable-languages=c,c++,fortran --with-gmp-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-gmp --with-gmp-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-gmp/.libs --with-mpc-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpc/src --with-mpc-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpc/src/.libs --with-mpfr-include=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpfr/src --with-mpfr-lib=/root/rpmbuild/BUILD/gcc-6.1.0-obj/../gcc-6.1.0/our-mpfr/src/.libs]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 6.1.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/cm/local/apps/cuda/libs/current/lib64/../lib64/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/cm/local/apps/cuda/libs/current/lib64/:/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib/:/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_daf60' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/collect2 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_daf60 /usr/lib/../lib64/crt1.o /usr/lib/../lib64/crti.o /cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtbegin.o -L/cm/local/apps/cuda/libs/current/lib64/../lib64 -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0 -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/cm/local/apps/cuda/libs/current/lib64 -L/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib -L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../.. CMakeFiles/cmTC_daf60.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtend.o /usr/lib/../lib64/crtn.o]
+    arg [/cm/local/apps/gcc/6.1.0/libexec/gcc/x86_64-pc-linux-gnu/6.1.0/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_daf60] ==> ignore
+    arg [/usr/lib/../lib64/crt1.o] ==> ignore
+    arg [/usr/lib/../lib64/crti.o] ==> ignore
+    arg [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtbegin.o] ==> ignore
+    arg [-L/cm/local/apps/cuda/libs/current/lib64/../lib64] ==> dir [/cm/local/apps/cuda/libs/current/lib64/../lib64]
+    arg [-L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0] ==> dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0]
+    arg [-L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64] ==> dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/cm/local/apps/cuda/libs/current/lib64] ==> dir [/cm/local/apps/cuda/libs/current/lib64]
+    arg [-L/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib] ==> dir [/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib]
+    arg [-L/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../..] ==> dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../..]
+    arg [CMakeFiles/cmTC_daf60.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/crtend.o] ==> ignore
+    arg [/usr/lib/../lib64/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse library dir [/cm/local/apps/cuda/libs/current/lib64/../lib64] ==> [/cm/local/apps/cuda/libs/current/lib64]
+  collapse library dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0] ==> [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0]
+  collapse library dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../../../lib64] ==> [/cm/local/apps/gcc/6.1.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/cm/local/apps/cuda/libs/current/lib64] ==> [/cm/local/apps/cuda/libs/current/lib64]
+  collapse library dir [/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib] ==> [/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib]
+  collapse library dir [/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/../../..] ==> [/cm/local/apps/gcc/6.1.0/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/cm/local/apps/cuda/libs/current/lib64;/cm/local/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0;/cm/local/apps/gcc/6.1.0/lib64;/lib64;/usr/lib64;/cm/shared/apps/cuda91/toolkit/9.1.85/targets/x86_64-linux/lib;/cm/local/apps/gcc/6.1.0/lib]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_bc58d/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_bc58d.dir/build.make CMakeFiles/cmTC_bc58d.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_bc58d.dir/feature_tests.cxx.o
+/cm/local/apps/gcc/6.1.0/bin/c++     -std=c++14 -o CMakeFiles/cmTC_bc58d.dir/feature_tests.cxx.o -c /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_bc58d
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_bc58d.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/c++        CMakeFiles/cmTC_bc58d.dir/feature_tests.cxx.o  -o cmTC_bc58d -rdynamic 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_517a6/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_517a6.dir/build.make CMakeFiles/cmTC_517a6.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_517a6.dir/feature_tests.cxx.o
+/cm/local/apps/gcc/6.1.0/bin/c++     -std=c++11 -o CMakeFiles/cmTC_517a6.dir/feature_tests.cxx.o -c /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_517a6
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_517a6.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/c++        CMakeFiles/cmTC_517a6.dir/feature_tests.cxx.o  -o cmTC_517a6 -rdynamic 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_eca81/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_eca81.dir/build.make CMakeFiles/cmTC_eca81.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_eca81.dir/feature_tests.cxx.o
+/cm/local/apps/gcc/6.1.0/bin/c++     -std=c++98 -o CMakeFiles/cmTC_eca81.dir/feature_tests.cxx.o -c /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_eca81
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_eca81.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/c++        CMakeFiles/cmTC_eca81.dir/feature_tests.cxx.o  -o cmTC_eca81 -rdynamic 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_c9d25/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c9d25.dir/build.make CMakeFiles/cmTC_c9d25.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c9d25.dir/CheckIncludeFile.c.o
+/cm/local/apps/gcc/6.1.0/bin/gcc    -fPIC    -o CMakeFiles/cmTC_c9d25.dir/CheckIncludeFile.c.o   -c /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_c9d25
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_c9d25.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/gcc  -fPIC     CMakeFiles/cmTC_c9d25.dir/CheckIncludeFile.c.o  -o cmTC_c9d25 -rdynamic 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_d9345/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_d9345.dir/build.make CMakeFiles/cmTC_d9345.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d9345.dir/CheckFunctionExists.c.o
+/cm/local/apps/gcc/6.1.0/bin/gcc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_d9345.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d9345
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_d9345.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/gcc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_d9345.dir/CheckFunctionExists.c.o  -o cmTC_d9345 -rdynamic -lpthread 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
+Determining if the function clock_gettime exists in the rt passed with the following output:
+Change Dir: /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_c148e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c148e.dir/build.make CMakeFiles/cmTC_c148e.dir/build
+gmake[1]: Entering directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c148e.dir/CheckFunctionExists.c.o
+/cm/local/apps/gcc/6.1.0/bin/gcc    -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -DCHECK_FUNCTION_EXISTS=clock_gettime   -o CMakeFiles/cmTC_c148e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c148e
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_c148e.dir/link.txt --verbose=1
+/cm/local/apps/gcc/6.1.0/bin/gcc   -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -DCHECK_FUNCTION_EXISTS=clock_gettime    CMakeFiles/cmTC_c148e.dir/CheckFunctionExists.c.o  -o cmTC_c148e  -L/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp/time.h -rdynamic -lrt -Wl,-rpath,/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp/time.h 
+gmake[1]: Leaving directory `/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/CMakeTmp'
+
+
