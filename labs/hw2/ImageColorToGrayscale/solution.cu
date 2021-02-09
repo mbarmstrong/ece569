@@ -13,13 +13,6 @@
 //@@ INSERT DEVICE CODE HERE
 __global__ void colorConvert(float *grayImage, float *rgbImage, int width, int height) {
   
-  // int col = threadIdx.x + blockIdx.x * blockDim.x;
-  // int row = threadIdx.y + blockIdx.y * blockDim.y;
-
-  // if (col < width && row < height) {
-  //   int grayOffset = row * width + col;
-  // }
-
   for (int row = 0; row < height; row++) {
     for (int col = 0; col < width; col++) {
       int idx = row * width + col;
@@ -84,7 +77,7 @@ int main(int argc, char *argv[]) {
   wbTime_start(Compute, "Doing the computation on the GPU");
   
   //@@ INSERT CODE HERE
-  colorConvert<<<myGrid, myBlock>>>(deviceOutputImageData, deviceInputImageData, imageWidth, imageHeight);
+  colorConvert<<<ceil(inputLength / 256.0), 256>>>(deviceOutputImageData, deviceInputImageData, imageWidth, imageHeight);
 
   wbTime_stop(Compute, "Doing the computation on the GPU");
 
