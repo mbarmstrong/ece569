@@ -13,16 +13,14 @@
 //@@ INSERT DEVICE CODE HERE
 __global__ void colorConvert(float *grayImage, float *rgbImage, int width, int height) {
   
-  for (int row = 0; row < height; row++) {
-    for (int col = 0; col < width; col++) {
-      int idx = row * width + col;
+  if (col < width && row < height) {}
+    int idx = row * width + col;
 
-      float r = rgbImage[3 * idx];
-      float g = rgbImage[3 * idx + 1];
-      float b = rgbImage[3 * idx + 2];
+    float r = rgbImage[3 * idx];
+    float g = rgbImage[3 * idx + 1];
+    float b = rgbImage[3 * idx + 2];
 
-      grayImage[idx] = (0.21 * r) + (0.71 * g) + (0.07 * b);
-    }
+    grayImage[idx] = (0.21 * r) + (0.71 * g) + (0.07 * b);
   }
   
 }
