@@ -77,7 +77,10 @@ int main(int argc, char *argv[]) {
   wbTime_start(Compute, "Doing the computation on the GPU");
   
   //@@ INSERT CODE HERE
-  colorConvert<<<ceil(inputLength / 256.0), 256>>>(deviceOutputImageData, deviceInputImageData, imageWidth, imageHeight);
+  dim3 myGrid((imageWidth - 1)/16 + 1, (imageHeight - 1)/16 + 1, 1);
+  dim3 myBlock(16, 16, 1);
+
+  colorConvert<<<myGrid, myBlock>>>(deviceOutputImageData, deviceInputImageData, imageWidth, imageHeight);
 
   wbTime_stop(Compute, "Doing the computation on the GPU");
 
