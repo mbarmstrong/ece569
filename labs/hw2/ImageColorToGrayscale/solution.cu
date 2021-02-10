@@ -13,6 +13,9 @@
 //@@ INSERT DEVICE CODE HERE
 __global__ void colorConvert(float *grayImage, float *rgbImage, int width, int height, int numChannels) {
   
+  int col = threadIdx.x + blockIdx.x * blockDim.x;
+  int row = threadIdx.y + blockIdx.y * blockDim.y;
+
   if (col < width && row < height) {
     int idx = row * width + col;
 
