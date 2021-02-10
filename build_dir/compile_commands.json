@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/u30/mbarmstrong/ece569/build_dir",
+  "command": "/cm/local/apps/gcc/6.1.0/bin/c++    -I/home/u30/mbarmstrong/ece569/labs/libwb -I/cm/shared/apps/cuda91/toolkit/9.1.85/include   -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O2 -DNDEBUG   -std=gnu++11 -o CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.o -c /home/u30/mbarmstrong/ece569/labs/hw2/ImageColorToGrayscale/dataset_generator.cpp",
+  "file": "/home/u30/mbarmstrong/ece569/labs/hw2/ImageColorToGrayscale/dataset_generator.cpp"
+},
+{
+  "directory": "/home/u30/mbarmstrong/ece569/build_dir",
   "command": "/cm/local/apps/gcc/6.1.0/bin/c++    -I/home/u30/mbarmstrong/ece569/labs/libwb -I/cm/shared/apps/cuda91/toolkit/9.1.85/include   -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O2 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/libwb/wbArg.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbArg.cpp",
   "file": "/home/u30/mbarmstrong/ece569/labs/libwb/wbArg.cpp"
 },
@@ -93,5 +98,10 @@
   "directory": "/home/u30/mbarmstrong/ece569/build_dir",
   "command": "/cm/local/apps/gcc/6.1.0/bin/c++    -I/home/u30/mbarmstrong/ece569/labs/libwb -I/cm/shared/apps/cuda91/toolkit/9.1.85/include   -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O2 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/vendor/json11.cpp",
   "file": "/home/u30/mbarmstrong/ece569/labs/libwb/vendor/json11.cpp"
+},
+{
+  "directory": "/home/u30/mbarmstrong/ece569/build_dir",
+  "command": "/cm/local/apps/gcc/6.1.0/bin/c++    -I/home/u30/mbarmstrong/ece569/labs/libwb -I/cm/shared/apps/cuda91/toolkit/9.1.85/include   -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O2 -DNDEBUG   -std=gnu++11 -o CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.o -c /home/u30/mbarmstrong/ece569/labs/hw2/VectorAdd/dataset_generator.cpp",
+  "file": "/home/u30/mbarmstrong/ece569/labs/hw2/VectorAdd/dataset_generator.cpp"
 }
 ]

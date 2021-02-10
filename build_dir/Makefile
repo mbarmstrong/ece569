@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ImageColorToGrayscale_DatasetGenerator
+
+# Build rule for target.
+ImageColorToGrayscale_DatasetGenerator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ImageColorToGrayscale_DatasetGenerator
+.PHONY : ImageColorToGrayscale_DatasetGenerator
+
+# fast build rule for target.
+ImageColorToGrayscale_DatasetGenerator/fast:
+	$(MAKE) -f CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/build.make CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/build
+.PHONY : ImageColorToGrayscale_DatasetGenerator/fast
+
+#=============================================================================
+# Target rules for targets named ImageColorToGrayscale_Solution
+
+# Build rule for target.
+ImageColorToGrayscale_Solution: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ImageColorToGrayscale_Solution
+.PHONY : ImageColorToGrayscale_Solution
+
+# fast build rule for target.
+ImageColorToGrayscale_Solution/fast:
+	$(MAKE) -f CMakeFiles/ImageColorToGrayscale_Solution.dir/build.make CMakeFiles/ImageColorToGrayscale_Solution.dir/build
+.PHONY : ImageColorToGrayscale_Solution/fast
+
+#=============================================================================
 # Target rules for targets named wb
 
 # Build rule for target.
@@ -124,17 +150,84 @@ wb/fast:
 .PHONY : wb/fast
 
 #=============================================================================
-# Target rules for targets named DeviceQuery_Solution
+# Target rules for targets named VectorAdd_Solution
 
 # Build rule for target.
-DeviceQuery_Solution: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 DeviceQuery_Solution
-.PHONY : DeviceQuery_Solution
+VectorAdd_Solution: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 VectorAdd_Solution
+.PHONY : VectorAdd_Solution
 
 # fast build rule for target.
-DeviceQuery_Solution/fast:
-	$(MAKE) -f CMakeFiles/DeviceQuery_Solution.dir/build.make CMakeFiles/DeviceQuery_Solution.dir/build
-.PHONY : DeviceQuery_Solution/fast
+VectorAdd_Solution/fast:
+	$(MAKE) -f CMakeFiles/VectorAdd_Solution.dir/build.make CMakeFiles/VectorAdd_Solution.dir/build
+.PHONY : VectorAdd_Solution/fast
+
+#=============================================================================
+# Target rules for targets named VectorAdd_DatasetGenerator
+
+# Build rule for target.
+VectorAdd_DatasetGenerator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 VectorAdd_DatasetGenerator
+.PHONY : VectorAdd_DatasetGenerator
+
+# fast build rule for target.
+VectorAdd_DatasetGenerator/fast:
+	$(MAKE) -f CMakeFiles/VectorAdd_DatasetGenerator.dir/build.make CMakeFiles/VectorAdd_DatasetGenerator.dir/build
+.PHONY : VectorAdd_DatasetGenerator/fast
+
+hw2/ImageColorToGrayscale/dataset_generator.o: hw2/ImageColorToGrayscale/dataset_generator.cpp.o
+
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.o
+
+# target to build an object file
+hw2/ImageColorToGrayscale/dataset_generator.cpp.o:
+	$(MAKE) -f CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/build.make CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.o
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.cpp.o
+
+hw2/ImageColorToGrayscale/dataset_generator.i: hw2/ImageColorToGrayscale/dataset_generator.cpp.i
+
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.i
+
+# target to preprocess a source file
+hw2/ImageColorToGrayscale/dataset_generator.cpp.i:
+	$(MAKE) -f CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/build.make CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.i
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.cpp.i
+
+hw2/ImageColorToGrayscale/dataset_generator.s: hw2/ImageColorToGrayscale/dataset_generator.cpp.s
+
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.s
+
+# target to generate assembly for a file
+hw2/ImageColorToGrayscale/dataset_generator.cpp.s:
+	$(MAKE) -f CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/build.make CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.s
+.PHONY : hw2/ImageColorToGrayscale/dataset_generator.cpp.s
+
+hw2/VectorAdd/dataset_generator.o: hw2/VectorAdd/dataset_generator.cpp.o
+
+.PHONY : hw2/VectorAdd/dataset_generator.o
+
+# target to build an object file
+hw2/VectorAdd/dataset_generator.cpp.o:
+	$(MAKE) -f CMakeFiles/VectorAdd_DatasetGenerator.dir/build.make CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.o
+.PHONY : hw2/VectorAdd/dataset_generator.cpp.o
+
+hw2/VectorAdd/dataset_generator.i: hw2/VectorAdd/dataset_generator.cpp.i
+
+.PHONY : hw2/VectorAdd/dataset_generator.i
+
+# target to preprocess a source file
+hw2/VectorAdd/dataset_generator.cpp.i:
+	$(MAKE) -f CMakeFiles/VectorAdd_DatasetGenerator.dir/build.make CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.i
+.PHONY : hw2/VectorAdd/dataset_generator.cpp.i
+
+hw2/VectorAdd/dataset_generator.s: hw2/VectorAdd/dataset_generator.cpp.s
+
+.PHONY : hw2/VectorAdd/dataset_generator.s
+
+# target to generate assembly for a file
+hw2/VectorAdd/dataset_generator.cpp.s:
+	$(MAKE) -f CMakeFiles/VectorAdd_DatasetGenerator.dir/build.make CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.s
+.PHONY : hw2/VectorAdd/dataset_generator.cpp.s
 
 libwb/vendor/json11.o: libwb/vendor/json11.cpp.o
 
@@ -655,10 +748,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... ImageColorToGrayscale_DatasetGenerator"
+	@echo "... ImageColorToGrayscale_Solution"
 	@echo "... rebuild_cache"
 	@echo "... wb"
 	@echo "... edit_cache"
-	@echo "... DeviceQuery_Solution"
+	@echo "... VectorAdd_Solution"
+	@echo "... VectorAdd_DatasetGenerator"
+	@echo "... hw2/ImageColorToGrayscale/dataset_generator.o"
+	@echo "... hw2/ImageColorToGrayscale/dataset_generator.i"
+	@echo "... hw2/ImageColorToGrayscale/dataset_generator.s"
+	@echo "... hw2/VectorAdd/dataset_generator.o"
+	@echo "... hw2/VectorAdd/dataset_generator.i"
+	@echo "... hw2/VectorAdd/dataset_generator.s"
 	@echo "... libwb/vendor/json11.o"
 	@echo "... libwb/vendor/json11.i"
 	@echo "... libwb/vendor/json11.s"

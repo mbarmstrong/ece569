@@ -1,2 +1,4 @@
 # Hashes of file build rules.
 ffd2e599a569bb4593d29cc4d18e8e8f CMakeFiles/DeviceQuery_Solution.dir/hw1/DeviceQuery/DeviceQuery_Solution_generated_template.cu.o
+2ef49759393dfd5a79d75f881b36dfb9 CMakeFiles/ImageColorToGrayscale_Solution.dir/hw2/ImageColorToGrayscale/ImageColorToGrayscale_Solution_generated_solution.cu.o
+cf5a2ebf8f780bc076e2dcf8373ae5d8 CMakeFiles/VectorAdd_Solution.dir/hw2/VectorAdd/VectorAdd_Solution_generated_solution.cu.o

@@ -30,23 +30,23 @@
 module load openmpi
 module load cuda91/toolkit/9.1.85
 ### set directory for job execution, ~netid = home directory path
-cd ~akoglu/Spring2021/ece569/build_dir
+cd ~mbarmstrong/ece569/build_dir
 
 ###
 ###setenv MPI_DSM_DISTRIBUTE
 
 ### run your executable program with begin and end date and time output
 
-PATHS[0]=/home/u26/akoglu/Spring2021/ece569/build_dir/ImageColorToGrayscale/Dataset/0;
-PATHS[1]=/home/u26/akoglu/Spring2021/ece569/build_dir/ImageColorToGrayscale/Dataset/1;
-PATHS[2]=/home/u26/akoglu/Spring2021/ece569/build_dir/ImageColorToGrayscale/Dataset/2;
-PATHS[3]=/home/u26/akoglu/Spring2021/ece569/build_dir/ImageColorToGrayscale/Dataset/3;
-PATHS[4]=/home/u26/akoglu/Spring2021/ece569/build_dir/ImageColorToGrayscale/Dataset/4;
-PATHS[5]=/home/u26/akoglu/Spring2021/ece569/build_dir/ImageColorToGrayscale/Dataset/5;
-PATHS[6]=/home/u26/akoglu/Spring2021/ece569/build_dir/ImageColorToGrayscale/Dataset/6;
-PATHS[7]=/home/u26/akoglu/Spring2021/ece569/build_dir/ImageColorToGrayscale/Dataset/7;
-PATHS[8]=/home/u26/akoglu/Spring2021/ece569/build_dir/ImageColorToGrayscale/Dataset/8;
-PATHS[9]=/home/u26/akoglu/Spring2021/ece569/build_dir/ImageColorToGrayscale/Dataset/9;
+PATHS[0]=/home/u30/mbarmstrong/ece569/build_dir/ImageColorToGrayscale/Dataset/0;
+PATHS[1]=/home/u30/mbarmstrong/ece569/build_dir/ImageColorToGrayscale/Dataset/1;
+PATHS[2]=/home/u30/mbarmstrong/ece569/build_dir/ImageColorToGrayscale/Dataset/2;
+PATHS[3]=/home/u30/mbarmstrong/ece569/build_dir/ImageColorToGrayscale/Dataset/3;
+PATHS[4]=/home/u30/mbarmstrong/ece569/build_dir/ImageColorToGrayscale/Dataset/4;
+PATHS[5]=/home/u30/mbarmstrong/ece569/build_dir/ImageColorToGrayscale/Dataset/5;
+PATHS[6]=/home/u30/mbarmstrong/ece569/build_dir/ImageColorToGrayscale/Dataset/6;
+PATHS[7]=/home/u30/mbarmstrong/ece569/build_dir/ImageColorToGrayscale/Dataset/7;
+PATHS[8]=/home/u30/mbarmstrong/ece569/build_dir/ImageColorToGrayscale/Dataset/8;
+PATHS[9]=/home/u30/mbarmstrong/ece569/build_dir/ImageColorToGrayscale/Dataset/9;
 
 
 count=0
@@ -58,16 +58,16 @@ do
 done
 
 
-PATHS[0]=/home/u26/akoglu/Spring2021/ece569/build_dir/VectorAdd/Dataset/0
-PATHS[1]=/home/u26/akoglu/Spring2021/ece569/build_dir/VectorAdd/Dataset/1
-PATHS[2]=/home/u26/akoglu/Spring2021/ece569/build_dir/VectorAdd/Dataset/2
-PATHS[3]=/home/u26/akoglu/Spring2021/ece569/build_dir/VectorAdd/Dataset/3
-PATHS[4]=/home/u26/akoglu/Spring2021/ece569/build_dir/VectorAdd/Dataset/4
-PATHS[5]=/home/u26/akoglu/Spring2021/ece569/build_dir/VectorAdd/Dataset/5
-PATHS[6]=/home/u26/akoglu/Spring2021/ece569/build_dir/VectorAdd/Dataset/6
-PATHS[7]=/home/u26/akoglu/Spring2021/ece569/build_dir/VectorAdd/Dataset/7
-PATHS[8]=/home/u26/akoglu/Spring2021/ece569/build_dir/VectorAdd/Dataset/8
-PATHS[9]=/home/u26/akoglu/Spring2021/ece569/build_dir/VectorAdd/Dataset/9
+PATHS[0]=/home/u30/mbarmstrong/ece569/build_dir/VectorAdd/Dataset/0
+PATHS[1]=/home/u30/mbarmstrong/ece569/build_dir/VectorAdd/Dataset/1
+PATHS[2]=/home/u30/mbarmstrong/ece569/build_dir/VectorAdd/Dataset/2
+PATHS[3]=/home/u30/mbarmstrong/ece569/build_dir/VectorAdd/Dataset/3
+PATHS[4]=/home/u30/mbarmstrong/ece569/build_dir/VectorAdd/Dataset/4
+PATHS[5]=/home/u30/mbarmstrong/ece569/build_dir/VectorAdd/Dataset/5
+PATHS[6]=/home/u30/mbarmstrong/ece569/build_dir/VectorAdd/Dataset/6
+PATHS[7]=/home/u30/mbarmstrong/ece569/build_dir/VectorAdd/Dataset/7
+PATHS[8]=/home/u30/mbarmstrong/ece569/build_dir/VectorAdd/Dataset/8
+PATHS[9]=/home/u30/mbarmstrong/ece569/build_dir/VectorAdd/Dataset/9
 
 count=0
 for j in ${PATHS[@]}
