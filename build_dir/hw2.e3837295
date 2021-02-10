@@ -1,0 +1,13 @@
+0.09user 0.23system 0:00.47elapsed 69%CPU (0avgtext+0avgdata 156612maxresident)k
+2504inputs+24outputs (1major+18466minor)pagefaults 0swaps
+0.39user 0.37system 0:00.84elapsed 91%CPU (0avgtext+0avgdata 159432maxresident)k
+2064inputs+16outputs (0major+19939minor)pagefaults 0swaps
+0.16user 0.25system 0:00.48elapsed 87%CPU (0avgtext+0avgdata 157504maxresident)k
+1040inputs+16outputs (0major+18945minor)pagefaults 0swaps
+0.09user 0.22system 0:00.37elapsed 82%CPU (0avgtext+0avgdata 157036maxresident)k
+720inputs+16outputs (0major+18671minor)pagefaults 0swaps
+5.42user 2.57system 0:08.10elapsed 98%CPU (0avgtext+0avgdata 171184maxresident)k
+8192inputs+16outputs (0major+24177minor)pagefaults 0swaps
+6.95user 2.83system 0:09.91elapsed 98%CPU (0avgtext+0avgdata 172380maxresident)k
+8992inputs+24outputs (0major+24749minor)pagefaults 0swaps
+=>> PBS: job killed: cput 26 exceeded limit 10
