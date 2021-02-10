@@ -11,14 +11,14 @@
   } while (0)
 
 //@@ INSERT DEVICE CODE HERE
-__global__ void colorConvert(float *grayImage, float *rgbImage, int width, int height) {
+__global__ void colorConvert(float *grayImage, float *rgbImage, int width, int height, int numChannels) {
   
-  if (col < width && row < height) {}
+  if (col < width && row < height) {
     int idx = row * width + col;
 
-    float r = rgbImage[3 * idx];
-    float g = rgbImage[3 * idx + 1];
-    float b = rgbImage[3 * idx + 2];
+    float r = rgbImage[numChannels * idx];
+    float g = rgbImage[numChannels * idx + 1];
+    float b = rgbImage[numChannels * idx + 2];
 
     grayImage[idx] = (0.21 * r) + (0.71 * g) + (0.07 * b);
   }
@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
   dim3 myGrid((imageWidth - 1)/16 + 1, (imageHeight - 1)/16 + 1, 1);
   dim3 myBlock(16, 16, 1);
 
-  colorConvert<<<myGrid, myBlock>>>(deviceOutputImageData, deviceInputImageData, imageWidth, imageHeight);
+  colorConvert<<<myGrid, myBlock>>>(deviceOutputImageData, deviceInputImageData, imageWidth, imageHeight, imageChannels);
 
   wbTime_stop(Compute, "Doing the computation on the GPU");
 
