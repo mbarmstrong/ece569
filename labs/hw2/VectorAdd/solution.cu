@@ -35,6 +35,7 @@ int main(int argc, char **argv) {
   //@@ Allocate GPU memory here
   cudaMalloc((void **) &deviceInput1, inputLength * sizeof(float));
   cudaMalloc((void **) &deviceInput2, inputLength * sizeof(float));
+  cudaMalloc((void **) &deviceOutput, inputLength * sizeof(float));
 
   wbTime_stop(GPU, "Allocating GPU memory.");
 
