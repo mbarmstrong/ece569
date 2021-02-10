@@ -25,6 +25,18 @@ __global__ void colorConvert(float *grayImage, float *rgbImage, int width, int h
 
     grayImage[idx] = (0.21 * r) + (0.71 * g) + (0.07 * b);
   }
+
+  // for (int row = 0; row < height; row++) {
+  //   for (int col = 0; col < width; col++) {
+  //     int idx = row * width + col;
+
+  //     float r = rgbImage[3 * idx];
+  //     float g = rgbImage[3 * idx + 1];
+  //     float b = rgbImage[3 * idx + 2];
+
+  //     grayImage[idx] = (0.21 * r) + (0.71 * g) + (0.07 * b);
+  //   }
+  // }
   
 }
 
@@ -78,7 +90,7 @@ int main(int argc, char *argv[]) {
   wbTime_start(Compute, "Doing the computation on the GPU");
   
   //@@ INSERT CODE HERE
-  dim3 myGrid((imageWidth - 1)/16 + 1, (imageHeight - 1)/16 + 1, 1);
+  dim3 myGrid(ceil(imageWidth/16.0), ceil(imageHeight/16.0), 1);
   dim3 myBlock(16, 16, 1);
 
   colorConvert<<<myGrid, myBlock>>>(deviceOutputImageData, deviceInputImageData, imageWidth, imageHeight, imageChannels);
