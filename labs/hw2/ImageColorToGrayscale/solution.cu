@@ -13,31 +13,20 @@
 //@@ INSERT DEVICE CODE HERE
 __global__ void colorConvert(float *grayImage, float *rgbImage, int width, int height, int numChannels) {
   
-  int col = threadIdx.x + blockIdx.x * blockDim.x;
-  int row = threadIdx.y + blockIdx.y * blockDim.y;
+  int col = threadIdx.x + blockIdx.x * blockDim.x; // column index
+  int row = threadIdx.y + blockIdx.y * blockDim.y; // row index
 
-  if (col < width && row < height) {
-    int idx = row * width + col;
+  if (col < width && row < height) {  // check boundary condition
+    int idx = row * width + col; // mapping 2D to 1D coordinate
 
-    float r = rgbImage[numChannels * idx];
-    float g = rgbImage[numChannels * idx + 1];
-    float b = rgbImage[numChannels * idx + 2];
+    float r = rgbImage[numChannels * idx];      // red component
+    float g = rgbImage[numChannels * idx + 1];  // green component
+    float b = rgbImage[numChannels * idx + 2];  // blue component
 
-    grayImage[idx] = (0.21 * r) + (0.71 * g) + (0.07 * b);
+    // rescale pixel using rgb values and floating point constants
+    // store new pixel value in grayscale image
+    grayImage[idx] = (0.21 * r) + (0.71 * g) + (0.07 * b); 
   }
-
-  // for (int row = 0; row < height; row++) {
-  //   for (int col = 0; col < width; col++) {
-  //     int idx = row * width + col;
-
-  //     float r = rgbImage[3 * idx];
-  //     float g = rgbImage[3 * idx + 1];
-  //     float b = rgbImage[3 * idx + 2];
-
-  //     grayImage[idx] = (0.21 * r) + (0.71 * g) + (0.07 * b);
-  //   }
-  // }
-  
 }
 
 // Also modify the main function to launch thekernel. 
@@ -90,9 +79,13 @@ int main(int argc, char *argv[]) {
   wbTime_start(Compute, "Doing the computation on the GPU");
   
   //@@ INSERT CODE HERE
+
+  // defining grid size (num blocks) and block size (num threads per block)
+  // block size is 16x16
   dim3 myGrid(ceil(imageWidth/16.0), ceil(imageHeight/16.0), 1);
   dim3 myBlock(16, 16, 1);
 
+  // kernel launch, perform color conversion on device input image data and store in device output image data
   colorConvert<<<myGrid, myBlock>>>(deviceOutputImageData, deviceInputImageData, imageWidth, imageHeight, imageChannels);
 
   wbTime_stop(Compute, "Doing the computation on the GPU");
