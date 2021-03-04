@@ -31,7 +31,7 @@ __global__ void matrixMultiply(float *A, float *B, float *C, int numARows,
   if ((Row < numCRows) && (Col < numCColumns)) {
     for (int i = 0; i < numAColumns; i++) 
       Cvalue += A[numAColumns * Row + i] * B[i * numBColumns + Col];
-    C[Row * numBColumns + Col] = Cvalue;
+    C[Row * numCColumns + Col] = Cvalue;
   }
 
 }
@@ -62,7 +62,9 @@ int main(int argc, char **argv) {
   //@@ Set numCRows and numCColumns
   numCRows    = numARows;   // set to correct value
   numCColumns = numBColumns;   // set to correct value
+  
   //@@ Allocate the hostC matrix
+  hostC = (float *)malloc(numCRows * numCColumns * sizeof(float));
   
   wbTime_stop(Generic, "Importing data and creating memory on host");
 
@@ -92,7 +94,7 @@ int main(int argc, char **argv) {
   // use dim3 structure for setting block and grid dimensions
 
   dim3 myBlock(16, 16, 1);
-  dim3 myGrid(ceil(numBColumns / 16.0), ceil(numARows / 16.0)); // FIXME
+  dim3 myGrid(ceil(numCColumns / 16.0), ceil(numCRows / 16.0));
 
   wbTime_start(Compute, "Performing CUDA computation");
   //@@ Launch the GPU Kernel here

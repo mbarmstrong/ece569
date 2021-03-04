@@ -36,18 +36,15 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C,
   // # rows in C = # rows in A
   // # columns in C = # columns in B
 
-  numCRows = numARows;
-  numCColumns = numBColumns;
+  for (int c = 0; c < (numAColumns - 1)/TILE_WIDTH + 1; ++c) {
 
-  for (int c = 0; c < (numCColumns - 1)/TILE_WIDTH + 1; ++c) {
-
-    if (Row < numCRows && (c * TILE_WIDTH + tx) < numCColumns)
-      ds_A[ty][tx] = A[Row * numCColumns + (c * TILE_WIDTH + tx)];
+    if (Row < numARows && (c * TILE_WIDTH + tx) < numAColumns)
+      ds_A[ty][tx] = A[Row * numAColumns + (c * TILE_WIDTH + tx)];
     else
       ds_A[ty][tx] = 0.0;
 
-    if ((c * TILE_WIDTH + ty) < numCRows && Col < numCColumns)
-      ds_B[ty][tx] = B[(c * TILE_WIDTH + ty) * numCColumns + Col];
+    if ((c * TILE_WIDTH + ty) < numBRows && Col < numBColumns)
+      ds_B[ty][tx] = B[(c * TILE_WIDTH + ty) * numBColumns + Col];
     else
       ds_B[ty][tx] = 0.0;
 
@@ -95,7 +92,9 @@ int main(int argc, char **argv) {
   //@@ Set numCRows and numCColumns
   numCRows    = numARows;   // set to correct value
   numCColumns = numBColumns;   // set to correct value
+  
   //@@ Allocate the hostC matrix
+  hostC = (float *)malloc(numCRows * numCColumns * sizeof(float));
   
   wbTime_stop(Generic, "Importing data and creating memory on host");
 
@@ -123,7 +122,7 @@ int main(int argc, char **argv) {
   //@@ Initialize the grid and block dimensions here
   // note that TILE_WIDTH is set to 16 on line number 13. 
   dim3 myBlock(TILE_WIDTH, TILE_WIDTH, 1);
-  dim3 myGrid(ceil(numBColumns / TILE_WIDTH), ceil(numARows / TILE_WIDTH)); // FIXME
+  dim3 myGrid(ceil(numCColumns / TILE_WIDTH), ceil(numCRows / TILE_WIDTH)); // FIXME
   
   wbTime_start(Compute, "Performing CUDA computation");
   //@@ Launch the GPU Kernel here
