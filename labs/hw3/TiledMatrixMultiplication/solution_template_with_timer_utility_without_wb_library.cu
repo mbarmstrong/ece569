@@ -17,8 +17,8 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C, int numARows,
   //@@ Insert code to implement matrix multiplication here
   //@@ You have to use tiling with shared memory for arbitrary size
 
-  __shared__ float ds_A[blockDim.y][blockDim.x];
-  __shared__ float ds_B[blockDim.y][blockDim.x];
+  __shared__ float ds_A[blockDim.x][blockDim.x];
+  __shared__ float ds_B[blockDim.x][blockDim.x];
   
   int bx = blockIdx.x;
   int by = blockIdx.y;
