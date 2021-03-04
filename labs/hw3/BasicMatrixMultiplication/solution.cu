@@ -92,7 +92,7 @@ int main(int argc, char **argv) {
   // use dim3 structure for setting block and grid dimensions
 
   dim3 myBlock(16, 16, 1);
-  dim3 myGrid(ceil(numBColumns / 16), ceil(numARows / 16)); // FIXME
+  dim3 myGrid(ceil(numBColumns / 16.0), ceil(numARows / 16.0)); // FIXME
 
   wbTime_start(Compute, "Performing CUDA computation");
   //@@ Launch the GPU Kernel here
