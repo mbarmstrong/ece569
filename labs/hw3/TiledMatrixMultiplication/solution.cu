@@ -122,7 +122,8 @@ int main(int argc, char **argv) {
   //@@ Initialize the grid and block dimensions here
   // note that TILE_WIDTH is set to 16 on line number 13. 
   dim3 myBlock(TILE_WIDTH, TILE_WIDTH, 1);
-  dim3 myGrid(ceil(numCColumns / TILE_WIDTH), ceil(numCRows / TILE_WIDTH), 1); // FIXME
+  dim3 myGrid(ceil(numCColumns / TILE_WIDTH), ceil(numCRows / TILE_WIDTH), 1);
+  // dim3 myGrid((numCColumns - 1)/TILE_WIDTH + 1, (numCRows - 1)/TILE_WIDTH + 1, 1);
   
   wbTime_start(Compute, "Performing CUDA computation");
   //@@ Launch the GPU Kernel here

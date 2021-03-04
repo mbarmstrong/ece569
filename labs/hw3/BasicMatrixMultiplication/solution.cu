@@ -95,6 +95,7 @@ int main(int argc, char **argv) {
 
   dim3 myBlock(16, 16, 1);
   dim3 myGrid(ceil(numCColumns / 16.0), ceil(numCRows / 16.0));
+  // dim3 myGrid((numCColumns - 1)/16 + 1, (numCRows - 1)/16 + 1, 1);
 
   wbTime_start(Compute, "Performing CUDA computation");
   //@@ Launch the GPU Kernel here
