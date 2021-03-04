@@ -20,8 +20,8 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C,
   //@@ Insert code to implement matrix multiplication here
   //@@ You have to use tiling with shared memory for arbitrary size
 
-  __shared__ float ds_M[TILE_WIDTH][TILE_WIDTH];
-  __shared__ float ds_N[TILE_WIDTH][TILE_WIDTH];
+  __shared__ float ds_A[TILE_WIDTH][TILE_WIDTH];
+  __shared__ float ds_B[TILE_WIDTH][TILE_WIDTH];
   
   int bx = blockIdx.x;
   int by = blockIdx.y;
@@ -42,20 +42,20 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C,
   for (int c = 0; c < (numCColumns - 1)/TILE_WIDTH + 1; ++c) {
 
     if (Row < numCRows && (c * TILE_WIDTH + tx) < numCColumns)
-      ds_M[ty][tx] = M[Row * numCColumns + (c * TILE_WIDTH + tx)];
+      ds_A[ty][tx] = A[Row * numCColumns + (c * TILE_WIDTH + tx)];
     else
-      ds_M[ty][tx] = 0.0;
+      ds_A[ty][tx] = 0.0;
 
     if ((c * TILE_WIDTH + ty) < numCRows && Col < numCColumns)
-      ds_N[ty][tx] = N[(c * TILE_WIDTH + ty) * numCColumns + Col];
+      ds_B[ty][tx] = B[(c * TILE_WIDTH + ty) * numCColumns + Col];
     else
-      ds_N[ty][tx] = 0.0;
+      ds_B[ty][tx] = 0.0;
 
     __syncthreads();
 
     if (Row < numCRows && Col < numCColumns) {
       for (int i = 0; i < TILE_WIDTH; ++i) {
-        Cvalue += ds_M[ty][i] * ds_N[i][tx];
+        Cvalue += ds_A[ty][i] * ds_B[i][tx];
       }
     }
 
