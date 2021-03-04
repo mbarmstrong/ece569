@@ -1,8 +1,8 @@
 [
 {
   "directory": "/home/u30/mbarmstrong/ece569/build_dir",
-  "command": "/cm/local/apps/gcc/6.1.0/bin/c++    -I/home/u30/mbarmstrong/ece569/labs/libwb -I/cm/shared/apps/cuda91/toolkit/9.1.85/include   -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O2 -DNDEBUG   -std=gnu++11 -o CMakeFiles/ImageColorToGrayscale_DatasetGenerator.dir/hw2/ImageColorToGrayscale/dataset_generator.cpp.o -c /home/u30/mbarmstrong/ece569/labs/hw2/ImageColorToGrayscale/dataset_generator.cpp",
-  "file": "/home/u30/mbarmstrong/ece569/labs/hw2/ImageColorToGrayscale/dataset_generator.cpp"
+  "command": "/cm/local/apps/gcc/6.1.0/bin/c++    -I/home/u30/mbarmstrong/ece569/labs/libwb -I/cm/shared/apps/cuda91/toolkit/9.1.85/include   -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O2 -DNDEBUG   -std=gnu++11 -o CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/hw3/BasicMatrixMultiplication/dataset_generator.cpp.o -c /home/u30/mbarmstrong/ece569/labs/hw3/BasicMatrixMultiplication/dataset_generator.cpp",
+  "file": "/home/u30/mbarmstrong/ece569/labs/hw3/BasicMatrixMultiplication/dataset_generator.cpp"
 },
 {
   "directory": "/home/u30/mbarmstrong/ece569/build_dir",
@@ -101,7 +101,7 @@
 },
 {
   "directory": "/home/u30/mbarmstrong/ece569/build_dir",
-  "command": "/cm/local/apps/gcc/6.1.0/bin/c++    -I/home/u30/mbarmstrong/ece569/labs/libwb -I/cm/shared/apps/cuda91/toolkit/9.1.85/include   -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O2 -DNDEBUG   -std=gnu++11 -o CMakeFiles/VectorAdd_DatasetGenerator.dir/hw2/VectorAdd/dataset_generator.cpp.o -c /home/u30/mbarmstrong/ece569/labs/hw2/VectorAdd/dataset_generator.cpp",
-  "file": "/home/u30/mbarmstrong/ece569/labs/hw2/VectorAdd/dataset_generator.cpp"
+  "command": "/cm/local/apps/gcc/6.1.0/bin/c++    -I/home/u30/mbarmstrong/ece569/labs/libwb -I/cm/shared/apps/cuda91/toolkit/9.1.85/include   -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -O2 -DNDEBUG   -std=gnu++11 -o CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/hw3/TiledMatrixMultiplication/dataset_generator.cpp.o -c /home/u30/mbarmstrong/ece569/labs/hw3/TiledMatrixMultiplication/dataset_generator.cpp",
+  "file": "/home/u30/mbarmstrong/ece569/labs/hw3/TiledMatrixMultiplication/dataset_generator.cpp"
 }
 ]
