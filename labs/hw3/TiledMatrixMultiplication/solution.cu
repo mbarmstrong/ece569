@@ -50,11 +50,11 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C,
 
     __syncthreads();
 
-    // if (Row < numCRows && Col < numCColumns) {
+    if (Row < numCRows && Col < numCColumns) {
       for (int i = 0; i < TILE_WIDTH; ++i) {
         Cvalue += ds_A[ty][i] * ds_B[i][tx];
       }
-    // }
+    }
 
     __syncthreads();
   }
