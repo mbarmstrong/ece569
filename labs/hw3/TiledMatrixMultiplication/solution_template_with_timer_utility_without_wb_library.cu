@@ -12,7 +12,7 @@
   } while (0)
 
 #define TILE_WIDTH 16
-  
+
 // Compute C = A * B
 __global__ void matrixMultiplyShared(float *A, float *B, float *C, int numARows, int numAColumns, int numBRows, int numBColumns, int numCRows, int numCColumns) {
   //@@ Insert code to implement matrix multiplication here
@@ -156,6 +156,8 @@ cudaEventCreate(&astopEvent);
   //ali  wbTime_start(Copy, "Copying output memory to the CPU");
   //@@ Copy the GPU memory back to the CPU here
   
+  cudaMemcpy(hostC, deviceC, numCRows * numCColumns * sizeof(float), cudaMemcpyDeviceToHost);
+
   //ali  wbTime_stop(Copy, "Copying output memory to the CPU");
   wbSolution(args, hostC, numCRows, numCColumns);
 } /* end of block size sweep */

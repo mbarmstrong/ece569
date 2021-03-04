@@ -48,7 +48,6 @@ int main(int argc, char **argv) {
   int numCColumns; // number of columns in the matrix C (you have to set
                    // this)
 
-
   int dim_param;
 
 cudaEvent_t astartEvent, astopEvent;
@@ -94,7 +93,6 @@ cudaEventCreate(&astopEvent);
  //ali wbTime_stop(GPU, "Copying input memory to the GPU.");
 
   
-  
   // ali: this loop will sweep blocks 4x4, 8x8, 16x16 and 32x32
   dim_param=4;
   for(dim_param=4; dim_param<33; dim_param=dim_param*2) {
@@ -124,6 +122,8 @@ cudaEventCreate(&astopEvent);
   // wbLog(TRACE, "The block dimensions are ", dim_param, " x ", dim_param);
   //ali  wbTime_start(Copy, "Copying output memory to the CPU");
   //@@ Copy the GPU memory back to the CPU here
+
+  cudaMemcpy(hostC, deviceC, numCRows * numCColumns * sizeof(float), cudaMemcpyDeviceToHost);
   
   //ali  wbTime_stop(Copy, "Copying output memory to the CPU");
   wbSolution(args, hostC, numCRows, numCColumns);
