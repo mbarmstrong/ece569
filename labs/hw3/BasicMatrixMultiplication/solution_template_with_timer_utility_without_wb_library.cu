@@ -18,7 +18,7 @@ __global__ void matrixMultiply(float *A, float *B, float *C, int numARows, int n
 
   int Row = blockIdx.y * blockDim.y + threadIdx.y;  // calculate row index
   int Col = blockIdx.x * blockDim.x + threadIdx.x;  // calculate column index
-  float Cvalue = 0.0; // accumulated C element value
+  float Cvalue = 0; // accumulated C element value
 
   // A (m x k) * B (k x n) = C (m x n)
   // # rows in C = # rows in A

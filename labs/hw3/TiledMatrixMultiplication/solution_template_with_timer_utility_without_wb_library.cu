@@ -11,44 +11,45 @@
     }                                                                     \
   } while (0)
 
+#define TILE_WIDTH 16
 
 // Compute C = A * B
 __global__ void matrixMultiplyShared(float *A, float *B, float *C, int numARows, int numAColumns, int numBRows, int numBColumns, int numCRows, int numCColumns) {
   //@@ Insert code to implement matrix multiplication here
   //@@ You have to use tiling with shared memory for arbitrary size
 
-  __shared__ float ds_A[blockDim.x][blockDim.x];
-  __shared__ float ds_B[blockDim.x][blockDim.x];
+  __shared__ float ds_A[TILE_WIDTH][TILE_WIDTH];
+  __shared__ float ds_B[TILE_WIDTH][TILE_WIDTH];
   
   int bx = blockIdx.x;
   int by = blockIdx.y;
   int tx = threadIdx.x;
   int ty = threadIdx.y;
 
-  int Row = by * blockDim.y + ty;
-  int Col = bx * blockDim.x + tx;
+  int Row = by * TILE_WIDTH + ty;
+  int Col = bx * TILE_WIDTH + tx;
   float Cvalue = 0.0;  
 
   // A (m x k) * B (k x n) = C (m x n)
   // # rows in C = # rows in A
   // # columns in C = # columns in B
 
-  for (int c = 0; c < ((numAColumns - 1)/blockDim.x + 1); ++c) {
+  for (int c = 0; c < ((numAColumns - 1)/TILE_WIDTH + 1); ++c) {
 
-    if (Row < numARows && (c * blockDim.x + tx) < numAColumns)
-      ds_A[ty][tx] = A[Row * numAColumns + (c * blockDim.x + tx)];
+    if (Row < numARows && (c * TILE_WIDTH + tx) < numAColumns)
+      ds_A[ty][tx] = A[Row * numAColumns + (c * TILE_WIDTH + tx)];
     else
       ds_A[ty][tx] = 0.0;
 
-    if ((c * blockDim.y + ty) < numBRows && Col < numBColumns)
-      ds_B[ty][tx] = B[(c * blockDim.y + ty) * numBColumns + Col];
+    if ((c * TILE_WIDTH + ty) < numBRows && Col < numBColumns)
+      ds_B[ty][tx] = B[(c * TILE_WIDTH + ty) * numBColumns + Col];
     else
       ds_B[ty][tx] = 0.0;
 
     __syncthreads();
 
     if (Row < numCRows && Col < numCColumns) {
-      for (int i = 0; i < blockDim.y; ++i) {
+      for (int i = 0; i < TILE_WIDTH; ++i) {
         Cvalue += ds_A[ty][i] * ds_B[i][tx];
       }
     }
