@@ -50,11 +50,11 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C,
 
     __syncthreads();
 
-    if (Row < numCRows && Col < numCColumns) {
+    // if (Row < numCRows && Col < numCColumns) {
       for (int i = 0; i < TILE_WIDTH; ++i) {
         Cvalue += ds_A[ty][i] * ds_B[i][tx];
       }
-    }
+    // }
 
     __syncthreads();
   }
@@ -122,7 +122,7 @@ int main(int argc, char **argv) {
   //@@ Initialize the grid and block dimensions here
   // note that TILE_WIDTH is set to 16 on line number 13. 
   dim3 myBlock(TILE_WIDTH, TILE_WIDTH, 1);
-  dim3 myGrid(ceil(numCColumns / TILE_WIDTH), ceil(numCRows / TILE_WIDTH)); // FIXME
+  dim3 myGrid(ceil(numCColumns / TILE_WIDTH), ceil(numCRows / TILE_WIDTH), 1); // FIXME
   
   wbTime_start(Compute, "Performing CUDA computation");
   //@@ Launch the GPU Kernel here
