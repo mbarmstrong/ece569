@@ -73,7 +73,7 @@ set(CUDA_NVCC_EXECUTABLE "/cm/shared/apps/cuda91/toolkit/9.1.85/bin/nvcc") # pat
 set(CUDA_NVCC_FLAGS  --gpu-architecture;sm_60 -Xcompiler -Wno-unused-function,-Wno-unused-parameter -std=c++11 ;; ) # list
 # Build specific configuration flags
 set(CUDA_NVCC_FLAGS_RELEASE  ; )
-set(CUDA_NVCC_FLAGS_DEBUG -G ; )
+set(CUDA_NVCC_FLAGS_DEBUG  ; )
 set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64) # list

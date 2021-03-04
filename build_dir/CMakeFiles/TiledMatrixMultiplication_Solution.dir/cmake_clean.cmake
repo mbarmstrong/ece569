@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/TiledMatrixMultiplication_Solution.dir/hw3/TiledMatrixMultiplication/TiledMatrixMultiplication_Solution_generated_solution_template_with_timer_utility_without_wb_library.cu.o"
+  "CMakeFiles/TiledMatrixMultiplication_Solution.dir/hw3/TiledMatrixMultiplication/TiledMatrixMultiplication_Solution_generated_solution.cu.o"
   "TiledMatrixMultiplication_Solution.pdb"
   "TiledMatrixMultiplication_Solution"
 )
