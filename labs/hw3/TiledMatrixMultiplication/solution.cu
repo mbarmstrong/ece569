@@ -19,6 +19,53 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C,
                                      int numCRows, int numCColumns) {
   //@@ Insert code to implement matrix multiplication here
   //@@ You have to use tiling with shared memory for arbitrary size
+
+  __shared__ float ds_M[TILE_WIDTH][TILE_WIDTH];
+  __shared__ float ds_N[TILE_WIDTH][TILE_WIDTH];
+  
+  int bx = blockIdx.x;
+  int by = blockIdx.y;
+  int tx = threadIdx.x;
+  int ty = threadIdx.y;
+
+  int Row = by * TILE_WIDTH + ty;
+  int Col = bx * TILE_WIDTH + tx;
+  float Cvalue = 0;
+
+  // A (m x k) * B (k x n) = C (m x n)
+  // # rows in C = # rows in A
+  // # columns in C = # columns in B
+
+  numCRows = numARows;
+  numCColumns = numBColumns;
+
+  for (int c = 0; c < (numCColumns - 1)/TILE_WIDTH + 1; ++c) {
+
+    if (Row < numCRows && (c * TILE_WIDTH + tx) < numCColumns)
+      ds_M[ty][tx] = M[Row * numCColumns + (c * TILE_WIDTH + tx)];
+    else
+      ds_M[ty][tx] = 0.0;
+
+    if ((c * TILE_WIDTH + ty) < numCRows && Col < numCColumns)
+      ds_N[ty][tx] = N[(c * TILE_WIDTH + ty) * numCColumns + Col];
+    else
+      ds_N[ty][tx] = 0.0;
+
+    __syncthreads();
+
+    if (Row < numCRows && Col < numCColumns) {
+      for (int i = 0; i < TILE_WIDTH; ++i) {
+        Cvalue += ds_M[ty][i] * ds_N[i][tx];
+      }
+    }
+
+    __syncthreads();
+  }
+
+  if (Row < numCRows && Col < numCColumns) {
+    C[Row * numCColumns + Col] = Cvalue;
+  }
+  
 }
 
 int main(int argc, char **argv) {
@@ -46,8 +93,8 @@ int main(int argc, char **argv) {
                             &numBColumns);
                             
   //@@ Set numCRows and numCColumns
-  numCRows    = 0;   // set to correct value
-  numCColumns = 0;   // set to correct value
+  numCRows    = numARows;   // set to correct value
+  numCColumns = numBColumns;   // set to correct value
   //@@ Allocate the hostC matrix
   
   wbTime_stop(Generic, "Importing data and creating memory on host");
@@ -68,7 +115,8 @@ int main(int argc, char **argv) {
 
   //@@ Initialize the grid and block dimensions here
   // note that TILE_WIDTH is set to 16 on line number 13. 
-  
+  dim3 myBlock(TILE_WIDTH, TILE_WIDTH, 1);
+  dim3 myGrid(); // FIX ME
   
   wbTime_start(Compute, "Performing CUDA computation");
   //@@ Launch the GPU Kernel here
