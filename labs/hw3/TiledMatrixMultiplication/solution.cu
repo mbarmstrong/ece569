@@ -106,20 +106,32 @@ int main(int argc, char **argv) {
   wbTime_start(GPU, "Allocating GPU memory.");
   //@@ Allocate GPU memory here
 
+  cudaMalloc((void **)&deviceA, numARows * numAColumns * sizeof(float));
+  cudaMalloc((void **)&deviceB, numBRows * numBColumns * sizeof(float));
+  cudaMalloc((void **)&deviceC, numCRows * numCColumns * sizeof(float));
+
   wbTime_stop(GPU, "Allocating GPU memory.");
 
   wbTime_start(GPU, "Copying input memory to the GPU.");
   //@@ Copy memory to the GPU here
+
+  cudaMemcpy(deviceA, hostA, numARows * numAColumns * sizeof(float), cudaMemcpyHostToDevice);
+  cudaMemcpy(deviceB, hostB, numBRows * numBColumns * sizeof(float), cudaMemcpyHostToDevice);
 
   wbTime_stop(GPU, "Copying input memory to the GPU.");
 
   //@@ Initialize the grid and block dimensions here
   // note that TILE_WIDTH is set to 16 on line number 13. 
   dim3 myBlock(TILE_WIDTH, TILE_WIDTH, 1);
-  dim3 myGrid(); // FIX ME
+  dim3 myGrid(ceil(numBColumns / TILE_WIDTH), ceil(numARows / TILE_WIDTH)); // FIXME
   
   wbTime_start(Compute, "Performing CUDA computation");
   //@@ Launch the GPU Kernel here
+
+  matrixMultiplyShared<<<myGrid, myBlock>>>(deviceA, deviceB, deviceC, 
+                                      numARows, numAColumns,
+                                      numBRows, numBColumns, 
+                                      numCRows, numCColumns);
 
   cudaDeviceSynchronize();
   wbTime_stop(Compute, "Performing CUDA computation");
@@ -127,10 +139,16 @@ int main(int argc, char **argv) {
   wbTime_start(Copy, "Copying output memory to the CPU");
   //@@ Copy the GPU memory back to the CPU here
 
+  cudaMemcpy(hostC, deviceC, numCRows * numCColumns * sizeof(float), cudaMemcpyDeviceToHost);
+
   wbTime_stop(Copy, "Copying output memory to the CPU");
 
   wbTime_start(GPU, "Freeing GPU Memory");
   //@@ Free the GPU memory here
+
+  free(deviceA);
+  free(deviceB);
+  free(deviceC);
 
   wbTime_stop(GPU, "Freeing GPU Memory");
 
