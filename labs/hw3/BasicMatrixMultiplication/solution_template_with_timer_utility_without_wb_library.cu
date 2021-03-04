@@ -91,7 +91,6 @@ cudaEventCreate(&astopEvent);
   cudaMemcpy(deviceB, hostB, numBRows * numBColumns * sizeof(float), cudaMemcpyHostToDevice);
   
  //ali wbTime_stop(GPU, "Copying input memory to the GPU.");
-
   
   // ali: this loop will sweep blocks 4x4, 8x8, 16x16 and 32x32
   dim_param=4;
@@ -99,7 +98,7 @@ cudaEventCreate(&astopEvent);
     dim3 DimBlock(dim_param,dim_param,1);
     //@@ Initialize the grid dimensions here
     // use dim3 structure for setting grid dimensions
-	dim3 DimGrid(ceil(numCColumns / dim_param), ceil(numCRows / dim_param), 1);  // need to fill in DimGrid() call
+	dim3 DimGrid((numCColumns -1)/dim_param + 1, (numCRows - 1)/dim_param + 1, 1);  // need to fill in DimGrid() call
     //ali  wbTime_start(Compute, "Performing CUDA computation");
     cudaEventRecord(astartEvent, 0);
    //@@ Launch the GPU Kernel here
