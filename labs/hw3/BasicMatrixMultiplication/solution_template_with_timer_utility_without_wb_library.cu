@@ -18,7 +18,7 @@ __global__ void matrixMultiply(float *A, float *B, float *C, int numARows, int n
 
   int Row = blockIdx.y * blockDim.y + threadIdx.y;  // calculate row index
   int Col = blockIdx.x * blockDim.x + threadIdx.x;  // calculate column index
-  float Cvalue = 0; // accumulated C element value
+  float Cvalue = 0.0; // accumulated C element value
 
   // A (m x k) * B (k x n) = C (m x n)
   // # rows in C = # rows in A
@@ -99,7 +99,7 @@ cudaEventCreate(&astopEvent);
     dim3 DimBlock(dim_param,dim_param,1);
     //@@ Initialize the grid dimensions here
     // use dim3 structure for setting grid dimensions
-	dim3 DimGrid(ceil(numCColumns / dim_param), ceil(numCRows / dim_param));  // need to fill in DimGrid() call
+	dim3 DimGrid(ceil(numCColumns / dim_param), ceil(numCRows / dim_param), 1);  // need to fill in DimGrid() call
     //ali  wbTime_start(Compute, "Performing CUDA computation");
     cudaEventRecord(astartEvent, 0);
    //@@ Launch the GPU Kernel here
