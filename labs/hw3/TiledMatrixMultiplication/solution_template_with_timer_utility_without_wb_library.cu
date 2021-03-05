@@ -11,45 +11,45 @@
     }                                                                     \
   } while (0)
 
-#define TILE_WIDTH 16
+// #define TILE_WIDTH 16
 
 // Compute C = A * B
 __global__ void matrixMultiplyShared(float *A, float *B, float *C, int numARows, int numAColumns, int numBRows, int numBColumns, int numCRows, int numCColumns) {
   //@@ Insert code to implement matrix multiplication here
   //@@ You have to use tiling with shared memory for arbitrary size
 
-  __shared__ float ds_A[TILE_WIDTH][TILE_WIDTH];
-  __shared__ float ds_B[TILE_WIDTH][TILE_WIDTH];
+  __shared__ float ds_A[8][8];
+  __shared__ float ds_B[8][8];
   
   int bx = blockIdx.x;
   int by = blockIdx.y;
   int tx = threadIdx.x;
   int ty = threadIdx.y;
 
-  int Row = by * TILE_WIDTH + ty;
-  int Col = bx * TILE_WIDTH + tx;
+  int Row = by * 8 + ty;
+  int Col = bx * 8 + tx;
   float Cvalue = 0.0;  
 
   // A (m x k) * B (k x n) = C (m x n)
   // # rows in C = # rows in A
   // # columns in C = # columns in B
 
-  for (int c = 0; c < ((numAColumns - 1)/TILE_WIDTH + 1); ++c) {
+  for (int c = 0; c < ((numAColumns - 1)/8 + 1); ++c) {
 
-    if (Row < numARows && (c * TILE_WIDTH + tx) < numAColumns)
-      ds_A[ty][tx] = A[Row * numAColumns + (c * TILE_WIDTH + tx)];
+    if (Row < numARows && (c * 8 + tx) < numAColumns)
+      ds_A[ty][tx] = A[Row * numAColumns + (c * 8 + tx)];
     else
       ds_A[ty][tx] = 0.0;
 
-    if ((c * TILE_WIDTH + ty) < numBRows && Col < numBColumns)
-      ds_B[ty][tx] = B[(c * TILE_WIDTH + ty) * numBColumns + Col];
+    if ((c * 8 + ty) < numBRows && Col < numBColumns)
+      ds_B[ty][tx] = B[(c * 8 + ty) * numBColumns + Col];
     else
       ds_B[ty][tx] = 0.0;
 
     __syncthreads();
 
     if (Row < numCRows && Col < numCColumns) {
-      for (int i = 0; i < TILE_WIDTH; ++i) {
+      for (int i = 0; i < 8; ++i) {
         Cvalue += ds_A[ty][i] * ds_B[i][tx];
       }
     }
@@ -131,7 +131,7 @@ int main(int argc, char **argv) {
     dim3 DimBlock(dim_param,dim_param,1);
     //@@ Initialize the grid dimensions here
     // use dim3 structure for setting grid dimensions
-    dim3 DimGrid((numBColumns/TILE_WIDTH) + 1,(numARows/TILE_WIDTH)+1 ,1);  // need to fill in DimGrid() call
+    dim3 DimGrid((numCColumns - 1)/dim_param + 1, (numCRows - 1)/dim_param + 1, 1);  // need to fill in DimGrid() call
     //ali  wbTime_start(Compute, "Performing CUDA computation");
     cudaEventRecord(astartEvent, 0);
    //@@ Launch the GPU Kernel here
