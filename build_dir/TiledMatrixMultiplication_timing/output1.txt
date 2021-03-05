@@ -1,8 +1,8 @@
-Total execution time (ms) 0.060928 for block size 4 x 4 matrix size of 64 x 64 and 64 x 64
-{"data": {"correctq": false, "message": "The solution did not match the expected results at column 0 and row 0. Expecting 77.16 but got 81."}, "type": "solution"}
-Total execution time (ms) 0.035264 for block size 8 x 8 matrix size of 64 x 64 and 64 x 64
-{"data": {"correctq": false, "message": "The solution did not match the expected results at column 0 and row 0. Expecting 77.16 but got 81."}, "type": "solution"}
-Total execution time (ms) 0.034496 for block size 16 x 16 matrix size of 64 x 64 and 64 x 64
-{"data": {"correctq": false, "message": "The solution did not match the expected results at column 0 and row 0. Expecting 77.16 but got 84.48."}, "type": "solution"}
-Total execution time (ms) 0.034496 for block size 32 x 32 matrix size of 64 x 64 and 64 x 64
-{"data": {"correctq": false, "message": "The solution did not match the expected results at column 0 and row 0. Expecting 77.16 but got 84.48."}, "type": "solution"}
+Total execution time (ms) 0.059168 for block size 4 x 4 matrix size of 64 x 64 and 64 x 64
+{"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
+Total execution time (ms) 0.032864 for block size 8 x 8 matrix size of 64 x 64 and 64 x 64
+{"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
+Total execution time (ms) 0.026560 for block size 16 x 16 matrix size of 64 x 64 and 64 x 64
+{"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
+Total execution time (ms) 0.029888 for block size 32 x 32 matrix size of 64 x 64 and 64 x 64
+{"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}

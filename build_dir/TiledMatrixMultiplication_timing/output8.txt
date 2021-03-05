@@ -1,8 +1,8 @@
-Total execution time (ms) 0.133088 for block size 4 x 4 matrix size of 134 x 130 and 130 x 150
-{"data": {"correctq": false, "message": "The solution did not match the expected results at column 0 and row 0. Expecting 85.44 but got 117.4."}, "type": "solution"}
-Total execution time (ms) 0.100192 for block size 8 x 8 matrix size of 134 x 130 and 130 x 150
-{"data": {"correctq": false, "message": "The solution did not match the expected results at column 0 and row 0. Expecting 85.44 but got 117.4."}, "type": "solution"}
-Total execution time (ms) 0.106272 for block size 16 x 16 matrix size of 134 x 130 and 130 x 150
-{"data": {"correctq": false, "message": "The solution did not match the expected results at column 0 and row 0. Expecting 85.44 but got 117.4."}, "type": "solution"}
-Total execution time (ms) 0.154592 for block size 32 x 32 matrix size of 134 x 130 and 130 x 150
-{"data": {"correctq": false, "message": "The solution did not match the expected results at column 0 and row 0. Expecting 85.44 but got 124.4."}, "type": "solution"}
+Total execution time (ms) 0.129120 for block size 4 x 4 matrix size of 134 x 130 and 130 x 150
+{"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
+Total execution time (ms) 0.036384 for block size 8 x 8 matrix size of 134 x 130 and 130 x 150
+{"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
+Total execution time (ms) 0.031232 for block size 16 x 16 matrix size of 134 x 130 and 130 x 150
+{"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
+Total execution time (ms) 0.041696 for block size 32 x 32 matrix size of 134 x 130 and 130 x 150
+{"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
