@@ -1,8 +1,8 @@
-Total execution time (ms) 0.045312 for block size 4 x 4 matrix size of 16 x 16 and 16 x 16
+Total execution time (ms) 0.044224 for block size 4 x 4 matrix size of 16 x 16 and 16 x 16
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
-Total execution time (ms) 0.035456 for block size 8 x 8 matrix size of 16 x 16 and 16 x 16
+Total execution time (ms) 0.018848 for block size 8 x 8 matrix size of 16 x 16 and 16 x 16
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
-Total execution time (ms) 0.032320 for block size 16 x 16 matrix size of 16 x 16 and 16 x 16
+Total execution time (ms) 0.017760 for block size 16 x 16 matrix size of 16 x 16 and 16 x 16
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
-Total execution time (ms) 0.032672 for block size 32 x 32 matrix size of 16 x 16 and 16 x 16
+Total execution time (ms) 0.019232 for block size 32 x 32 matrix size of 16 x 16 and 16 x 16
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}

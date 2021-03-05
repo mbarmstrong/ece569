@@ -1,8 +1,8 @@
-Total execution time (ms) 1.442816 for block size 4 x 4 matrix size of 417 x 210 and 210 x 519
+Total execution time (ms) 1.443392 for block size 4 x 4 matrix size of 417 x 210 and 210 x 519
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
-Total execution time (ms) 0.260896 for block size 8 x 8 matrix size of 417 x 210 and 210 x 519
+Total execution time (ms) 0.260928 for block size 8 x 8 matrix size of 417 x 210 and 210 x 519
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
-Total execution time (ms) 0.153696 for block size 16 x 16 matrix size of 417 x 210 and 210 x 519
+Total execution time (ms) 0.148032 for block size 16 x 16 matrix size of 417 x 210 and 210 x 519
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
-Total execution time (ms) 0.117888 for block size 32 x 32 matrix size of 417 x 210 and 210 x 519
+Total execution time (ms) 0.115168 for block size 32 x 32 matrix size of 417 x 210 and 210 x 519
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}

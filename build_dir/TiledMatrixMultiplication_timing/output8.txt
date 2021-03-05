@@ -1,8 +1,8 @@
-Total execution time (ms) 0.129120 for block size 4 x 4 matrix size of 134 x 130 and 130 x 150
+Total execution time (ms) 0.129472 for block size 4 x 4 matrix size of 134 x 130 and 130 x 150
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
-Total execution time (ms) 0.036384 for block size 8 x 8 matrix size of 134 x 130 and 130 x 150
+Total execution time (ms) 0.036064 for block size 8 x 8 matrix size of 134 x 130 and 130 x 150
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
-Total execution time (ms) 0.031232 for block size 16 x 16 matrix size of 134 x 130 and 130 x 150
+Total execution time (ms) 0.031104 for block size 16 x 16 matrix size of 134 x 130 and 130 x 150
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
-Total execution time (ms) 0.041696 for block size 32 x 32 matrix size of 134 x 130 and 130 x 150
+Total execution time (ms) 0.033856 for block size 32 x 32 matrix size of 134 x 130 and 130 x 150
 {"data": {"correctq": true, "message": "The solution is correct"}, "type": "solution"}
