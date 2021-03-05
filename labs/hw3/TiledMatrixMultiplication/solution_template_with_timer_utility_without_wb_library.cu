@@ -82,10 +82,10 @@ int main(int argc, char **argv) {
 
   int dim_param;
 
-cudaEvent_t astartEvent, astopEvent;
-float aelapsedTime;
-cudaEventCreate(&astartEvent);
-cudaEventCreate(&astopEvent);
+  cudaEvent_t astartEvent, astopEvent;
+  float aelapsedTime;
+  cudaEventCreate(&astartEvent);
+  cudaEventCreate(&astopEvent);
 
   args = wbArg_read(argc, argv);
 
@@ -125,14 +125,13 @@ cudaEventCreate(&astopEvent);
  //ali wbTime_stop(GPU, "Copying input memory to the GPU.");
 
   
-  
   // ali: this loop will sweep blocks 4x4, 8x8, 16x16 and 32x32
   dim_param=4;
   for(dim_param=4; dim_param<33; dim_param=dim_param*2) {
     dim3 DimBlock(dim_param,dim_param,1);
     //@@ Initialize the grid dimensions here
     // use dim3 structure for setting grid dimensions
-    dim3 DimGrid((numCColumns - 1)/dim_param + 1, (numCRows - 1)/dim_param + 1, 1);  // need to fill in DimGrid() call
+    dim3 DimGrid((numBColumns/TILE_WIDTH) + 1,(numARows/TILE_WIDTH)+1 ,1);  // need to fill in DimGrid() call
     //ali  wbTime_start(Compute, "Performing CUDA computation");
     cudaEventRecord(astartEvent, 0);
    //@@ Launch the GPU Kernel here
