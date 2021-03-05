@@ -132,7 +132,7 @@ cudaEventCreate(&astopEvent);
     dim3 DimBlock(dim_param,dim_param,1);
     //@@ Initialize the grid dimensions here
     // use dim3 structure for setting grid dimensions
-	dim3 DimGrid((numCColumns + dimBlock.x - 1)/dimBlock.x, (numCRows + dimBlock.y - 1)/dimBlock.y, 1);  // need to fill in DimGrid() call
+	dim3 DimGrid((numCColumns + dim_param - 1)/dim_param, (numCRows + dim_param - 1)/dim_param, 1);  // need to fill in DimGrid() call
     //ali  wbTime_start(Compute, "Performing CUDA computation");
     cudaEventRecord(astartEvent, 0);
    //@@ Launch the GPU Kernel here
