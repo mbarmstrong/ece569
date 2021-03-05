@@ -11,45 +11,45 @@
     }                                                                     \
   } while (0)
 
-#define TILE_WIDTH 64
+  // #define dim_param 16
 
 // Compute C = A * B
-__global__ void matrixMultiplyShared(float *A, float *B, float *C, int numARows, int numAColumns, int numBRows, int numBColumns, int numCRows, int numCColumns) {
+__global__ void matrixMultiplyShared(float *A, float *B, float *C, int numARows, int numAColumns, int numBRows, int numBColumns, int numCRows, int numCColumns, int dim_param) {
   //@@ Insert code to implement matrix multiplication here
   //@@ You have to use tiling with shared memory for arbitrary size
 
-  __shared__ float ds_A[TILE_WIDTH][TILE_WIDTH];
-  __shared__ float ds_B[TILE_WIDTH][TILE_WIDTH];
+  __shared__ float ds_A[dim_param][dim_param];
+  __shared__ float ds_B[dim_param][dim_param];
   
   int bx = blockIdx.x;
   int by = blockIdx.y;
   int tx = threadIdx.x;
   int ty = threadIdx.y;
 
-  int Row = by * TILE_WIDTH + ty;
-  int Col = bx * TILE_WIDTH + tx;
+  int Row = by * dim_param + ty;
+  int Col = bx * dim_param + tx;
   float Cvalue = 0.0;  
 
   // A (m x k) * B (k x n) = C (m x n)
   // # rows in C = # rows in A
   // # columns in C = # columns in B
 
-  for (int c = 0; c < ((numAColumns - 1)/TILE_WIDTH + 1); ++c) {
+  for (int c = 0; c < ((numAColumns - 1)/dim_param + 1); ++c) {
 
-    if (Row < numARows && (c * TILE_WIDTH + tx) < numAColumns)
-      ds_A[ty][tx] = A[Row * numAColumns + (c * TILE_WIDTH + tx)];
+    if (Row < numARows && (c * dim_param + tx) < numAColumns)
+      ds_A[ty][tx] = A[Row * numAColumns + (c * dim_param + tx)];
     else
       ds_A[ty][tx] = 0.0;
 
-    if ((c * TILE_WIDTH + ty) < numBRows && Col < numBColumns)
-      ds_B[ty][tx] = B[(c * TILE_WIDTH + ty) * numBColumns + Col];
+    if ((c * dim_param + ty) < numBRows && Col < numBColumns)
+      ds_B[ty][tx] = B[(c * dim_param + ty) * numBColumns + Col];
     else
       ds_B[ty][tx] = 0.0;
 
     __syncthreads();
 
     if (Row < numCRows && Col < numCColumns) {
-      for (int i = 0; i < TILE_WIDTH; ++i) {
+      for (int i = 0; i < dim_param; ++i) {
         Cvalue += ds_A[ty][i] * ds_B[i][tx];
       }
     }
@@ -140,7 +140,7 @@ cudaEventCreate(&astopEvent);
   matrixMultiplyShared<<<DimGrid, DimBlock>>>(deviceA, deviceB, deviceC, 
                                       numARows, numAColumns,
                                       numBRows, numBColumns, 
-                                      numCRows, numCColumns);
+                                      numCRows, numCColumns, dim_param);
 
   cudaDeviceSynchronize();
   //cudaThreadSynchronize();
