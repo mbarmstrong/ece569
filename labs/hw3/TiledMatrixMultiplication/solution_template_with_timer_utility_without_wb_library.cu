@@ -11,7 +11,7 @@
     }                                                                     \
   } while (0)
 
-#define TILE_WIDTH 4
+#define TILE_WIDTH 2
 
 // Compute C = A * B
 __global__ void matrixMultiplyShared(float *A, float *B, float *C, int numARows, int numAColumns, int numBRows, int numBColumns, int numCRows, int numCColumns) {
@@ -137,9 +137,9 @@ int main(int argc, char **argv) {
    //@@ Launch the GPU Kernel here
   
   matrixMultiplyShared<<<DimGrid, DimBlock>>>(deviceA, deviceB, deviceC, 
-                                      128, 128,
-                                      128, 128, 
-                                      128, 128);
+                                      numARows, numAColumns,
+                                      numBRows, numBColumns, 
+                                      numCRows, numCColumns);
 
   cudaDeviceSynchronize();
   //cudaThreadSynchronize();
