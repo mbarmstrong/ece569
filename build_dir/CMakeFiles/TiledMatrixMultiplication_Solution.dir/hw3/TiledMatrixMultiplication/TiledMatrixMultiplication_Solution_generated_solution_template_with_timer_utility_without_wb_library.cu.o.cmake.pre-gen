@@ -72,9 +72,9 @@ set(generated_cubin_file_internal "/home/u30/mbarmstrong/ece569/build_dir/CMakeF
 set(CUDA_NVCC_EXECUTABLE "/cm/shared/apps/cuda91/toolkit/9.1.85/bin/nvcc") # path
 set(CUDA_NVCC_FLAGS  --gpu-architecture;sm_60 -Xcompiler -Wno-unused-function,-Wno-unused-parameter -std=c++11 ;; ) # list
 # Build specific configuration flags
-set(CUDA_NVCC_FLAGS_RELEASE  ; )
 set(CUDA_NVCC_FLAGS_DEBUG  ; )
 set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
+set(CUDA_NVCC_FLAGS_RELEASE  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64) # list
 set(CUDA_NVCC_INCLUDE_ARGS "-I/cm/shared/apps/cuda91/toolkit/9.1.85/include;-I/home/u30/mbarmstrong/ece569/labs/libwb;-I/cm/shared/apps/cuda91/toolkit/9.1.85/include") # list (needs to be in quotes to handle spaces properly).
