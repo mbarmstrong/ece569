@@ -11,15 +11,17 @@
     }                                                                     \
   } while (0)
 
-#define TILE_WIDTH 2
+// #define TILE_WIDTH 16
 
 // Compute C = A * B
 __global__ void matrixMultiplyShared(float *A, float *B, float *C, int numARows, int numAColumns, int numBRows, int numBColumns, int numCRows, int numCColumns) {
   //@@ Insert code to implement matrix multiplication here
   //@@ You have to use tiling with shared memory for arbitrary size
 
-  __shared__ float ds_A[TILE_WIDTH][TILE_WIDTH];
-  __shared__ float ds_B[TILE_WIDTH][TILE_WIDTH];
+  int TILE_WIDTH = blockDim.x;
+
+  __shared__ float ds_A[32][32];
+  __shared__ float ds_B[32][32];
   
   int bx = blockIdx.x;
   int by = blockIdx.y;
