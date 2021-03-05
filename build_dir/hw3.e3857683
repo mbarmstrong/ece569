@@ -1,0 +1,35 @@
+0.05user 0.22system 0:00.54elapsed 51%CPU (0avgtext+0avgdata 155668maxresident)k
+1976inputs+16outputs (1major+18038minor)pagefaults 0swaps
+0.06user 0.21system 0:00.33elapsed 81%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18088minor)pagefaults 0swaps
+0.05user 0.19system 0:00.36elapsed 66%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18113minor)pagefaults 0swaps
+0.05user 0.18system 0:00.29elapsed 80%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18064minor)pagefaults 0swaps
+0.05user 0.19system 0:00.30elapsed 80%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18131minor)pagefaults 0swaps
+0.06user 0.20system 0:00.32elapsed 81%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18183minor)pagefaults 0swaps
+0.07user 0.20system 0:00.33elapsed 82%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18278minor)pagefaults 0swaps
+0.06user 0.19system 0:00.32elapsed 81%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18171minor)pagefaults 0swaps
+0.08user 0.19system 0:00.34elapsed 82%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18342minor)pagefaults 0swaps
+0.33user 0.21system 0:00.60elapsed 90%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+20317minor)pagefaults 0swaps
+0.11user 0.25system 0:00.68elapsed 52%CPU (0avgtext+0avgdata 155668maxresident)k
+1968inputs+24outputs (1major+18046minor)pagefaults 0swaps
+0.19user 0.30system 0:01.58elapsed 31%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18095minor)pagefaults 0swaps
+0.47user 0.43system 0:01.63elapsed 55%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18120minor)pagefaults 0swaps
+0.47user 0.42system 0:01.48elapsed 60%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18073minor)pagefaults 0swaps
+0.19user 0.26system 0:02.98elapsed 15%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18138minor)pagefaults 0swaps
+0.38user 0.33system 0:03.81elapsed 18%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+16outputs (0major+18190minor)pagefaults 0swaps
+0.49user 0.43system 0:04.87elapsed 19%CPU (0avgtext+0avgdata 155668maxresident)k
+0inputs+24outputs (0major+18282minor)pagefaults 0swaps
+=>> PBS: job killed: walltime 27 exceeded limit 10
