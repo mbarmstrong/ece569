@@ -1,0 +1,19 @@
+==27138== NVPROF is profiling process 27138, command: ./TiledMatrixMultiplication_Solution -e output.raw -i input0.raw input1.raw -t vector
+==27138== Profiling application: ./TiledMatrixMultiplication_Solution -e output.raw -i input0.raw input1.raw -t vector
+==27138== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   41.38%  95.263us         1  95.263us  95.263us  95.263us  matrixMultiplyShared(float*, float*, float*, int, int, int, int, int, int)
+                   29.73%  68.448us         2  34.224us  30.944us  37.504us  [CUDA memcpy HtoD]
+                   28.88%  66.495us         1  66.495us  66.495us  66.495us  [CUDA memcpy DtoH]
+      API calls:   99.17%  235.12ms         3  78.374ms  4.2300us  235.11ms  cudaMalloc
+                    0.37%  867.33us         3  289.11us  80.771us  694.40us  cudaMemcpy
+                    0.28%  660.59us         1  660.59us  660.59us  660.59us  cuDeviceTotalMem
+                    0.06%  140.95us        94  1.4990us     156ns  59.309us  cuDeviceGetAttribute
+                    0.05%  127.91us         3  42.635us  5.1630us  107.36us  cudaFree
+                    0.04%  98.018us         1  98.018us  98.018us  98.018us  cudaDeviceSynchronize
+                    0.02%  49.365us         1  49.365us  49.365us  49.365us  cudaLaunch
+                    0.01%  19.135us         1  19.135us  19.135us  19.135us  cuDeviceGetName
+                    0.00%  3.6620us         9     406ns     136ns  2.1170us  cudaSetupArgument
+                    0.00%  3.0230us         3  1.0070us     185ns  2.5200us  cuDeviceGetCount
+                    0.00%  1.3650us         1  1.3650us  1.3650us  1.3650us  cudaConfigureCall
+                    0.00%     802ns         2     401ns     183ns     619ns  cuDeviceGet
