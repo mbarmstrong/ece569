@@ -448,7 +448,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 CUDA_64_BIT_DEVICE_CODE-ADVANCED:INTERNAL=1
 //List of intermediate files that are part of the cuda dependency
 // scanning.
-CUDA_ADDITIONAL_CLEAN_FILES:INTERNAL=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution_template_with_timer_utility_without_wb_library.cu.o.depend;/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/TiledMatrixMultiplication_Solution.dir/hw3/TiledMatrixMultiplication/TiledMatrixMultiplication_Solution_generated_solution_template_with_timer_utility_without_wb_library.cu.o.depend
+CUDA_ADDITIONAL_CLEAN_FILES:INTERNAL=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/BasicMatrixMultiplication_Solution.dir/hw3/BasicMatrixMultiplication/BasicMatrixMultiplication_Solution_generated_solution.cu.o.depend;/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/TiledMatrixMultiplication_Solution.dir/hw3/TiledMatrixMultiplication/TiledMatrixMultiplication_Solution_generated_solution.cu.o.depend
 //ADVANCED property for variable: CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE
 CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_BUILD_CUBIN

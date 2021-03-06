@@ -193,7 +193,7 @@ SET(CUDA_NVCC_DEPEND
  "/cm/shared/apps/cuda91/toolkit/9.1.85/include/vector_functions.h"
  "/cm/shared/apps/cuda91/toolkit/9.1.85/include/vector_functions.hpp"
  "/cm/shared/apps/cuda91/toolkit/9.1.85/include/vector_types.h"
- "/home/u30/mbarmstrong/ece569/labs/hw3/TiledMatrixMultiplication/solution_template_with_timer_utility_without_wb_library.cu"
+ "/home/u30/mbarmstrong/ece569/labs/hw3/BasicMatrixMultiplication/solution.cu"
  "/home/u30/mbarmstrong/ece569/labs/libwb/vendor/json11.hpp"
  "/home/u30/mbarmstrong/ece569/labs/libwb/vendor/sole.hpp"
  "/home/u30/mbarmstrong/ece569/labs/libwb/wb.h"
