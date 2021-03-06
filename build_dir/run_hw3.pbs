@@ -54,7 +54,7 @@ count=0
 for i in ${PATHS[@]}
 do
    file=output$((count)).txt
-   /usr/bin/time mpirun -n 1 ./BasicMatrixMultiplication_Solution -e $i/output.raw -i $i/input0.raw,$i/input1.raw -t matrix > BasicMatrixMultiplication_timing/$file
+   /usr/bin/time mpirun -n 1 ./BasicMatrixMultiplication_Solution -e $i/output.raw -i $i/input0.raw,$i/input1.raw -t matrix > BasicMatrixMultiplication_output/$file
  count=$((count+1))
 done
 
@@ -73,7 +73,7 @@ count=0
 for j in ${PATHS[@]}
 do
    file=output$((count)).txt
-   /usr/bin/time mpirun -n 1 ./TiledMatrixMultiplication_Solution -e $j/output.raw -i $j/input0.raw,$j/input1.raw -t matrix > TiledMatrixMultiplication_timing/$file
+   /usr/bin/time mpirun -n 1 ./TiledMatrixMultiplication_Solution -e $j/output.raw -i $j/input0.raw,$j/input1.raw -t matrix > TiledMatrixMultiplication_output/$file
  count=$((count+1))
 done
 
