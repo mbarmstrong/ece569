@@ -48,15 +48,15 @@ rm profile.txt
 rm profile.timeline
 rm profiledata
 
-echo "generating profile.txt"
+echo "generating profile1.txt"
 # make sure the input0.raw, input1.raw and output.raw files are in the build_dir directory. 
-nvprof --log-file profile.txt ./BasicMatrixMultiplication_Solution -e output.raw -i input0.raw,input1.raw -t vector > vout6.txt
+nvprof --log-file profile1.txt ./BasicMatrixMultiplication_Solution -e output.raw -i input0.raw,input1.raw -t vector > vout6.txt
 
-echo "generating profile.timeline"
-nvprof -o profile.timeline ./BasicMatrixMultiplication_Solution -e output.raw -i input0.raw,input1.raw -t vector > vout7.txt
+echo "generating profile1.timeline"
+nvprof -o profile1.timeline ./BasicMatrixMultiplication_Solution -e output.raw -i input0.raw,input1.raw -t vector > vout7.txt
 
-echo "generating profiledata for nvvp"
-nvprof --export-profile profiledata ./BasicMatrixMultiplication_Solution -e output.raw -i input0.raw,input1.raw -t vector > vout8.txt
+echo "generating profiledata1 for nvvp"
+nvprof --export-profile profiledata1 ./BasicMatrixMultiplication_Solution -e output.raw -i input0.raw,input1.raw -t vector > vout8.txt
 
 ### if using 10.0
 ###echo "starting nvvp, you need to load profiledata and profile.timeline files"
