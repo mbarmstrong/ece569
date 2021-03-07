@@ -43,7 +43,7 @@ use_c99()
 # with 'set' and change the value of COMPUTE_CAPABILITY to one of the following
 # hardware architectures: Tesla-class '11', '12', or '13'; Fermi-class '20'
 # or '21'; Kepler-class '30', '32', '35'; or Maxwell-class '50' or '52'
-set(COMPUTE_CAPABILITY 60)
+set(COMPUTE_CAPABILITY 35)
 # set(CUDA_SEPARABLE_COMPILATION TRUE)
 set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} --gpu-architecture;sm_${COMPUTE_CAPABILITY}")
 # list(APPEND CUDA_NVCC_FLAGS -arch=sm_35)
@@ -79,7 +79,7 @@ if (APPLE)
 endif ()
 
 # Add debugging to CUDA NVCC flags (for NVidia's NSight tools)
-### set(CUDA_NVCC_FLAGS_DEBUG ${CUDA_NVCC_FLAGS_DEBUG} "-G")
+set(CUDA_NVCC_FLAGS_DEBUG ${CUDA_NVCC_FLAGS_DEBUG} "-G")
 
 # Set the correct linker options on UNIX platforms
 # -lpthread inserted by ali akoglu  for compatiblity with elgato
@@ -156,4 +156,5 @@ if (BUILD_LIBWB_LIBRARY)
 endif (BUILD_LIBWB_LIBRARY)
 
 
-include(hw3/sources.cmake)
+include(hw4/sources.cmake)
+
