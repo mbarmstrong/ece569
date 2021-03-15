@@ -47,14 +47,14 @@ __global__ void histogram_shared_kernel(unsigned int *input, unsigned int *bins,
 	while (i < num_elements) {
 		int pos = input[i]; // bin position
 		if (pos >= 0 && pos < num_bins) // boundary condition check
-			atomicAdd(&bins_private[pos], 1); // atomically increment appropriate privatized bin
+			atomicAdd(&(bins_private[pos]), 1); // atomically increment appropriate privatized bin
 		i += stride;
 	}
 	__syncthreads();
 
 	// build global histogram
 	if (threadIdx.x < 4096) 
-		atomicAdd(&bins[threadIdx.x], bins_private[threadIdx.x]);
+		atomicAdd(&(bins[threadIdx.x]), bins_private[threadIdx.x]);
 }
 
 
