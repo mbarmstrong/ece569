@@ -53,6 +53,7 @@ __global__ void histogram_shared_kernel(unsigned int *input, unsigned int *bins,
 	__syncthreads();
 
 	// build global histogram
+	// number of bins > block size -- need multiple bins per thread
 	for (int j = 0; j < num_bins; j += blockDim.x) {
 		atomicAdd(&bins[threadIdx.x + j], bins_private[threadIdx.x + j]);
 	}
@@ -67,46 +68,9 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
                                  unsigned int num_bins) {
 
 	// insert your code here
-	// int i = threadIdx.x + blockIdx.x * blockDim.x; // index
-	// int stride = blockDim.x * gridDim.x; // total number of threads
-	// // __shared__ unsigned int bins_private[4096]; // privatized bins
-	// unsigned int temp;
-
-	// for (int i = 0; i < num_elements; i++) {
-	// 	input[i] = input[i];
-	// }
-
-	// // bubble sort
-	// for (int i = 0; i < num_elements/2; i++) {
-	//     int j = threadIdx.x;
-	//     if (j % 2 == 0 && j < num_elements-1) {
-	//         if (input[j+1] < input[j]) {
-	//         	temp = input[j+1];
-	//         	input[j+1] = input[j];
-	//         	input[j] = temp;
-	//             // swap(input[j+1], input[j]);
-	//         }
-	//     }
-	//     __syncthreads();
-
-	//     if (j % 2 == 1 && j < num_elements-1) {
-	//         if (input[j+1] < input[j]) {
-	//         	temp = input[j+1];
-	//         	input[j+1] = input[j];
-	//         	input[j] = temp;
-	//             // swap(input[j+1], input[j]);
-	//         }
-	//     }
-	//     __syncthreads();
-	// }
-
-	// i = 0;
-	// while (i < num_elements) {
-	// 	int pos = input[i]; // bin position
-	// 	if (pos >= 0 && pos < num_bins) // boundary condition check
-	// 		atomicAdd(&bins[pos], 1); // atomically increment appropriate bin
-	// 	i += stride;
-	// }
+	int i = threadIdx.x + blockIdx.x * blockDim.x; // index
+	int stride = blockDim.x * gridDim.x; // total number of threads
+	// __shared__ unsigned int bins_private[4096]; // privatized bins
 
 	// sorting based approach
 	// reduce by key
