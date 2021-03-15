@@ -76,7 +76,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	int stride = blockDim.x * gridDim.x; // total number of threads
 	// __shared__ unsigned int bins_private[4096]; // privatized bins
 
-	thrust::device_vector<unsigned int> input_sort(input); // copy input data
+	thrust::device_vector<unsigned int*> input_sort(input); // copy input data
 	thrust::sort(input_sort.begin(), input_sort.end()); // sort input 
 
 	thrust::device_vector<unsigned int> histo_values;
@@ -89,7 +89,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	for (int j = 0; j < num_bins; j += blockDim.x) {
 		atomicAdd(&bins[threadIdx.x + j], histo_counts[threadIdx.x + j]);
 	}
-	
+
 	// sorting based approach
 	// reduce by key
 	// compression before reduction
