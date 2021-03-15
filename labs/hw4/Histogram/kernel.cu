@@ -79,14 +79,14 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 
 	thrust::device_ptr<unsigned int> input_ptr(input);
 	// thrust::device_vector<unsigned int> input_sort(input_ptr);
-	thrust::sort(input_ptr, input_ptr+num_elements); // sort input 
+	thrust::sort(input_ptr, input_ptr + num_elements); // sort input 
 
 	// thrust::device_vector<unsigned int> histo_values;
 	// thrust::device_vector<unsigned int> histo_counts;
 	// histo_values.resize(4096);
  //  	histo_counts.resize(4096);
 
-	// thrust::reduce_by_key(input_sort.begin(), input_sort.end(), thrust::constant_iterator<int>(1), histo_values.begin(), histo_counts.begin());
+	// thrust::reduce_by_key(input_ptr, input_ptr + num_elements, thrust::constant_iterator<int>(1), histo_values.begin(), histo_counts.begin());
 
 	// int * ptr = thrust::raw_pointer_cast()
 	// for (int j = 0; j < num_bins; j += blockDim.x) {
