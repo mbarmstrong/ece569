@@ -76,7 +76,8 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	// int stride = blockDim.x * gridDim.x; // total number of threads
 	// __shared__ unsigned int bins_private[4096]; // privatized bins
 
-	thrust::device_ptr<unsigned int> input_sort(input);
+	thrust::device_ptr<unsigned int> input_ptr(input);
+	thrust::device_vector<unsigned int> input_sort(input_ptr);
 	thrust::sort(input_sort.begin(), input_sort.end()); // sort input 
 
 	// thrust::device_vector<unsigned int> histo_values;
