@@ -8,6 +8,7 @@ The input length can be assumed to be less than 2^32. NUM_BINS is fixed at 4096.
 */
 
 #include <thrust/device_vector.h>
+#include <thrust/device_ptr.h>
 #include <thrust/sort.h>
 #include <thrust/reduce.h>
 
