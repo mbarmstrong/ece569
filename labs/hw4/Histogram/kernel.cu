@@ -36,7 +36,7 @@ __global__ void histogram_shared_kernel(unsigned int *input, unsigned int *bins,
 
 	// insert your code here
 	int i = threadIdx.x + blockIdx.x * blockDim.x; // index
-	__shared__ unsigned int bins_private[NUM_BINS]; // privatized bins
+	__shared__ unsigned int bins_private[4096]; // privatized bins
 	int stride = blockDim.x * gridDim.x; // total number of threads
 
 	// initialize privatized bins to 0
@@ -68,33 +68,32 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	// insert your code here
 	int i = threadIdx.x + blockIdx.x * blockDim.x; // index
 	int stride = blockDim.x * gridDim.x; // total number of threads
-	__shared__ unsigned int bins_private[NUM_BINS]; // privatized bins
-	unsigned int input_sorted[];
+	__shared__ unsigned int bins_private[4096]; // privatized bins
 	unsigned int temp;
 
 	for (int i = 0; i < num_elements; i++) {
-		input_sorted[i] = input[i];
+		input[i] = input[i];
 	}
 
 	// bubble sort
 	for (int i = 0; i < num_elements/2; i++) {
 	    int j = threadIdx.x;
 	    if (j % 2 == 0 && j < num_elements-1) {
-	        if (input_sorted[j+1] < input_sorted[j]) {
-	        	temp = *input_sorted[j+1];
-	        	*input_sorted[j+1] *input_sorted[j];
-	        	*input_sorted[j] = temp;
-	            // swap(input_sorted[j+1], input_sorted[j]);
+	        if (input[j+1] < input[j]) {
+	        	temp = *input[j+1];
+	        	*input[j+1] *input[j];
+	        	*input[j] = temp;
+	            // swap(input[j+1], input[j]);
 	        }
 	    }
 	    __syncthreads();
 
 	    if (j % 2 == 1 && j < num_elements-1) {
-	        if (input_sorted[j+1] < input_sorted[j]) {
-	        	temp = *input_sorted[j+1];
-	        	*input_sorted[j+1] *input_sorted[j];
-	        	*input_sorted[j] = temp;
-	            // swap(input_sorted[j+1], input_sorted[j]);
+	        if (input[j+1] < input[j]) {
+	        	temp = *input[j+1];
+	        	*input[j+1] *input[j];
+	        	*input[j] = temp;
+	            // swap(input[j+1], input[j]);
 	        }
 	    }
 	    __syncthreads();
@@ -102,7 +101,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 
 	i = 0;
 	while (i < num_elements) {
-		int pos = input_sorted[i]; // bin position
+		int pos = input[i]; // bin position
 		if (pos >= 0 && pos < num_bins) // boundary condition check
 			atomicAdd(&bins[pos], 1); // atomically increment appropriate bin
 		i += stride;
