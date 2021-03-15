@@ -80,9 +80,9 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	    int j = threadIdx.x;
 	    if (j % 2 == 0 && j < num_elements-1) {
 	        if (input[j+1] < input[j]) {
-	        	temp = *input[j+1];
-	        	*input[j+1] *input[j];
-	        	*input[j] = temp;
+	        	temp = input[j+1];
+	        	input[j+1] input[j];
+	        	input[j] = temp;
 	            // swap(input[j+1], input[j]);
 	        }
 	    }
@@ -90,9 +90,9 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 
 	    if (j % 2 == 1 && j < num_elements-1) {
 	        if (input[j+1] < input[j]) {
-	        	temp = *input[j+1];
-	        	*input[j+1] *input[j];
-	        	*input[j] = temp;
+	        	temp = input[j+1];
+	        	input[j+1] input[j];
+	        	input[j] = temp;
 	            // swap(input[j+1], input[j]);
 	        }
 	    }
