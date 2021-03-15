@@ -36,20 +36,20 @@
 ###module load cuda10
 ### end of elgato
 ### set directory for job execution, ~netid = home directory path
-cd ~akoglu/Spring2021/ece569/build_dir
+cd ~mbarmstrong/ece569/build_dir
 
 ###
 ###setenv MPI_DSM_DISTRIBUTE
 
 ### run your executable program with begin and end date and time output
 
-PATHS[0]=/home/u26/akoglu/Spring2021/ece569/build_dir/Histogram/Dataset/0
-PATHS[1]=/home/u26/akoglu/Spring2021/ece569/build_dir/Histogram/Dataset/1
-PATHS[2]=/home/u26/akoglu/Spring2021/ece569/build_dir/Histogram/Dataset/2
-PATHS[3]=/home/u26/akoglu/Spring2021/ece569/build_dir/Histogram/Dataset/3
-PATHS[4]=/home/u26/akoglu/Spring2021/ece569/build_dir/Histogram/Dataset/4
-PATHS[5]=/home/u26/akoglu/Spring2021/ece569/build_dir/Histogram/Dataset/5
-PATHS[6]=/home/u26/akoglu/Spring2021/ece569/build_dir/Histogram/Dataset/6
+PATHS[0]=/home/u30/mbarmstrong/ece569/build_dir/Histogram/Dataset/0
+PATHS[1]=/home/u30/mbarmstrong/ece569/build_dir/Histogram/Dataset/1
+PATHS[2]=/home/u30/mbarmstrong/ece569/build_dir/Histogram/Dataset/2
+PATHS[3]=/home/u30/mbarmstrong/ece569/build_dir/Histogram/Dataset/3
+PATHS[4]=/home/u30/mbarmstrong/ece569/build_dir/Histogram/Dataset/4
+PATHS[5]=/home/u30/mbarmstrong/ece569/build_dir/Histogram/Dataset/5
+PATHS[6]=/home/u30/mbarmstrong/ece569/build_dir/Histogram/Dataset/6
 
 
 
