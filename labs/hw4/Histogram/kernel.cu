@@ -38,16 +38,17 @@ __global__ void histogram_shared_kernel(unsigned int *input, unsigned int *bins,
 	__shared__ unsigned int bins_private[4096]; // privatized bins
 	int i = threadIdx.x + blockIdx.x * blockDim.x; // index
 	int stride = blockDim.x * gridDim.x; // total number of threads
+	int pos = 0;
 
-	// initialize privatized bins to 0
-	if (threadIdx.x < 4096) bins_private[threadIdx.x] = 0;
-	__syncthreads();
+	// // initialize privatized bins to 0
+	// if (threadIdx.x < 4096) bins_private[threadIdx.x] = 0;
+	// __syncthreads();
 
 	// build local histogram
 	while (i < num_elements) {
-		// int pos = input[i]; // bin position
-		// if (pos >= 0 && pos < num_bins) // boundary condition check
-		atomicAdd(&(bins_private[input[i]]), 1); // atomically increment appropriate privatized bin
+		pos = input[i]; // bin position
+		if (pos >= 0 && pos < num_bins) // boundary condition check
+			atomicAdd(&(bins_private[pos]), 1); // atomically increment appropriate privatized bin
 		i += stride;
 	}
 	__syncthreads();
