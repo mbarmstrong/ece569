@@ -53,8 +53,10 @@ __global__ void histogram_shared_kernel(unsigned int *input, unsigned int *bins,
 	__syncthreads();
 
 	// build global histogram
-	if (threadIdx.x < 4096) 
-		atomicAdd(&bins[threadIdx.x], bins_private[threadIdx.x]);
+	for(int i = threadIdx.x; i < num_bins; i += num_bins)
+    	atomicAdd(&bins[threadIdx.x], bins_private[threadIdx.x]);
+	// if (threadIdx.x < 4096) 
+	// 	atomicAdd(&bins[threadIdx.x], bins_private[threadIdx.x]);
 }
 
 
