@@ -18,8 +18,9 @@ static unsigned int *generate_data(size_t n, unsigned int num_bins) {
   // for (unsigned int i = 0; i < n; i++) {
   //   data[i] = rand() % num_bins;
   // }
+  int val = rand() % num_bins;
   for (unsigned int i = 0; i < n; i++) {
-    data[i] = 12;
+    data[i] = val;
   }
   return data;
 }
