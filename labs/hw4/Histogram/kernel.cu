@@ -7,6 +7,10 @@ This clipping operation is a key step during histogram equalization process.
 The input length can be assumed to be less than 2^32. NUM_BINS is fixed at 4096.
 */
 
+#include <thrust/device_vector.h>
+#include <thrust/sort.h>
+#include <thrust/reduce.h>
+
 // version 0
 // global memory only interleaved version
 // include comments describing your approach
@@ -72,6 +76,20 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	int stride = blockDim.x * gridDim.x; // total number of threads
 	// __shared__ unsigned int bins_private[4096]; // privatized bins
 
+	thrust::device_vector<unsigned int> input_sort(input); // copy input data
+	thrust::sort(input_sort.begin(), input_sort.end()); // sort input 
+
+	thrust::device_vector<unsigned int> histo_values;
+	thrust::device_vector<unsigned int> histo_counts;
+	histo_values.resize(4096);
+  	histo_counts.resize(4096);
+
+	thrust::reduce_by_key(input_sort.begin(), input_sort.end(), thrust::constant_iterator<int>(1), histo_values.begin(), histo_counts.begin());
+
+	for (int j = 0; j < num_bins; j += blockDim.x) {
+		atomicAdd(&bins[threadIdx.x + j], histo_counts[threadIdx.x + j]);
+	}
+	
 	// sorting based approach
 	// reduce by key
 	// compression before reduction
