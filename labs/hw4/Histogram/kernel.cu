@@ -36,7 +36,7 @@ __global__ void histogram_shared_kernel(unsigned int *input, unsigned int *bins,
 
 	// insert your code here
 	int i = threadIdx.x + blockIdx.x * blockDim.x; // index
-	__shared__ unsigned int bins_private[num_bins]; // privatized bins
+	__shared__ unsigned int bins_private[NUM_BINS]; // privatized bins
 	int stride = blockDim.x * gridDim.x; // total number of threads
 
 	// initialize privatized bins to 0
@@ -68,8 +68,8 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	// insert your code here
 	int i = threadIdx.x + blockIdx.x * blockDim.x; // index
 	int stride = blockDim.x * gridDim.x; // total number of threads
-	__shared__ unsigned int bins_private[num_bins]; // privatized bins
-	unsigned int input_sorted[num_elements];
+	__shared__ unsigned int bins_private[NUM_BINS]; // privatized bins
+	unsigned int input_sorted[];
 	unsigned int temp;
 
 	for (int i = 0; i < num_elements; i++) {
@@ -99,10 +99,10 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	    }
 	    __syncthreads();
 	}
-	
+
 	i = 0;
 	while (i < num_elements) {
-		int pos = sorted_input[i]; // bin position
+		int pos = input_sorted[i]; // bin position
 		if (pos >= 0 && pos < num_bins) // boundary condition check
 			atomicAdd(&bins[pos], 1); // atomically increment appropriate bin
 		i += stride;
