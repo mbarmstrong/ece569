@@ -111,30 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TiledMatrixMultiplication_Solution
+# Target rules for targets named Histogram_DatasetGenerator
 
 # Build rule for target.
-TiledMatrixMultiplication_Solution: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TiledMatrixMultiplication_Solution
-.PHONY : TiledMatrixMultiplication_Solution
+Histogram_DatasetGenerator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Histogram_DatasetGenerator
+.PHONY : Histogram_DatasetGenerator
 
 # fast build rule for target.
-TiledMatrixMultiplication_Solution/fast:
-	$(MAKE) -f CMakeFiles/TiledMatrixMultiplication_Solution.dir/build.make CMakeFiles/TiledMatrixMultiplication_Solution.dir/build
-.PHONY : TiledMatrixMultiplication_Solution/fast
+Histogram_DatasetGenerator/fast:
+	$(MAKE) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/build
+.PHONY : Histogram_DatasetGenerator/fast
 
 #=============================================================================
-# Target rules for targets named BasicMatrixMultiplication_DatasetGenerator
+# Target rules for targets named Histogram_Solution
 
 # Build rule for target.
-BasicMatrixMultiplication_DatasetGenerator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BasicMatrixMultiplication_DatasetGenerator
-.PHONY : BasicMatrixMultiplication_DatasetGenerator
+Histogram_Solution: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Histogram_Solution
+.PHONY : Histogram_Solution
 
 # fast build rule for target.
-BasicMatrixMultiplication_DatasetGenerator/fast:
-	$(MAKE) -f CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/build.make CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/build
-.PHONY : BasicMatrixMultiplication_DatasetGenerator/fast
+Histogram_Solution/fast:
+	$(MAKE) -f CMakeFiles/Histogram_Solution.dir/build.make CMakeFiles/Histogram_Solution.dir/build
+.PHONY : Histogram_Solution/fast
 
 #=============================================================================
 # Target rules for targets named wb
@@ -149,85 +149,32 @@ wb/fast:
 	$(MAKE) -f CMakeFiles/wb.dir/build.make CMakeFiles/wb.dir/build
 .PHONY : wb/fast
 
-#=============================================================================
-# Target rules for targets named TiledMatrixMultiplication_DatasetGenerator
+hw4/Histogram/dataset_generator.o: hw4/Histogram/dataset_generator.cpp.o
 
-# Build rule for target.
-TiledMatrixMultiplication_DatasetGenerator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TiledMatrixMultiplication_DatasetGenerator
-.PHONY : TiledMatrixMultiplication_DatasetGenerator
-
-# fast build rule for target.
-TiledMatrixMultiplication_DatasetGenerator/fast:
-	$(MAKE) -f CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/build.make CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/build
-.PHONY : TiledMatrixMultiplication_DatasetGenerator/fast
-
-#=============================================================================
-# Target rules for targets named BasicMatrixMultiplication_Solution
-
-# Build rule for target.
-BasicMatrixMultiplication_Solution: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BasicMatrixMultiplication_Solution
-.PHONY : BasicMatrixMultiplication_Solution
-
-# fast build rule for target.
-BasicMatrixMultiplication_Solution/fast:
-	$(MAKE) -f CMakeFiles/BasicMatrixMultiplication_Solution.dir/build.make CMakeFiles/BasicMatrixMultiplication_Solution.dir/build
-.PHONY : BasicMatrixMultiplication_Solution/fast
-
-hw3/BasicMatrixMultiplication/dataset_generator.o: hw3/BasicMatrixMultiplication/dataset_generator.cpp.o
-
-.PHONY : hw3/BasicMatrixMultiplication/dataset_generator.o
+.PHONY : hw4/Histogram/dataset_generator.o
 
 # target to build an object file
-hw3/BasicMatrixMultiplication/dataset_generator.cpp.o:
-	$(MAKE) -f CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/build.make CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/hw3/BasicMatrixMultiplication/dataset_generator.cpp.o
-.PHONY : hw3/BasicMatrixMultiplication/dataset_generator.cpp.o
+hw4/Histogram/dataset_generator.cpp.o:
+	$(MAKE) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.o
+.PHONY : hw4/Histogram/dataset_generator.cpp.o
 
-hw3/BasicMatrixMultiplication/dataset_generator.i: hw3/BasicMatrixMultiplication/dataset_generator.cpp.i
+hw4/Histogram/dataset_generator.i: hw4/Histogram/dataset_generator.cpp.i
 
-.PHONY : hw3/BasicMatrixMultiplication/dataset_generator.i
-
-# target to preprocess a source file
-hw3/BasicMatrixMultiplication/dataset_generator.cpp.i:
-	$(MAKE) -f CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/build.make CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/hw3/BasicMatrixMultiplication/dataset_generator.cpp.i
-.PHONY : hw3/BasicMatrixMultiplication/dataset_generator.cpp.i
-
-hw3/BasicMatrixMultiplication/dataset_generator.s: hw3/BasicMatrixMultiplication/dataset_generator.cpp.s
-
-.PHONY : hw3/BasicMatrixMultiplication/dataset_generator.s
-
-# target to generate assembly for a file
-hw3/BasicMatrixMultiplication/dataset_generator.cpp.s:
-	$(MAKE) -f CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/build.make CMakeFiles/BasicMatrixMultiplication_DatasetGenerator.dir/hw3/BasicMatrixMultiplication/dataset_generator.cpp.s
-.PHONY : hw3/BasicMatrixMultiplication/dataset_generator.cpp.s
-
-hw3/TiledMatrixMultiplication/dataset_generator.o: hw3/TiledMatrixMultiplication/dataset_generator.cpp.o
-
-.PHONY : hw3/TiledMatrixMultiplication/dataset_generator.o
-
-# target to build an object file
-hw3/TiledMatrixMultiplication/dataset_generator.cpp.o:
-	$(MAKE) -f CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/build.make CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/hw3/TiledMatrixMultiplication/dataset_generator.cpp.o
-.PHONY : hw3/TiledMatrixMultiplication/dataset_generator.cpp.o
-
-hw3/TiledMatrixMultiplication/dataset_generator.i: hw3/TiledMatrixMultiplication/dataset_generator.cpp.i
-
-.PHONY : hw3/TiledMatrixMultiplication/dataset_generator.i
+.PHONY : hw4/Histogram/dataset_generator.i
 
 # target to preprocess a source file
-hw3/TiledMatrixMultiplication/dataset_generator.cpp.i:
-	$(MAKE) -f CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/build.make CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/hw3/TiledMatrixMultiplication/dataset_generator.cpp.i
-.PHONY : hw3/TiledMatrixMultiplication/dataset_generator.cpp.i
+hw4/Histogram/dataset_generator.cpp.i:
+	$(MAKE) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.i
+.PHONY : hw4/Histogram/dataset_generator.cpp.i
 
-hw3/TiledMatrixMultiplication/dataset_generator.s: hw3/TiledMatrixMultiplication/dataset_generator.cpp.s
+hw4/Histogram/dataset_generator.s: hw4/Histogram/dataset_generator.cpp.s
 
-.PHONY : hw3/TiledMatrixMultiplication/dataset_generator.s
+.PHONY : hw4/Histogram/dataset_generator.s
 
 # target to generate assembly for a file
-hw3/TiledMatrixMultiplication/dataset_generator.cpp.s:
-	$(MAKE) -f CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/build.make CMakeFiles/TiledMatrixMultiplication_DatasetGenerator.dir/hw3/TiledMatrixMultiplication/dataset_generator.cpp.s
-.PHONY : hw3/TiledMatrixMultiplication/dataset_generator.cpp.s
+hw4/Histogram/dataset_generator.cpp.s:
+	$(MAKE) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.s
+.PHONY : hw4/Histogram/dataset_generator.cpp.s
 
 libwb/vendor/json11.o: libwb/vendor/json11.cpp.o
 
@@ -748,19 +695,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... TiledMatrixMultiplication_Solution"
+	@echo "... Histogram_DatasetGenerator"
 	@echo "... rebuild_cache"
-	@echo "... BasicMatrixMultiplication_DatasetGenerator"
+	@echo "... Histogram_Solution"
 	@echo "... wb"
 	@echo "... edit_cache"
-	@echo "... TiledMatrixMultiplication_DatasetGenerator"
-	@echo "... BasicMatrixMultiplication_Solution"
-	@echo "... hw3/BasicMatrixMultiplication/dataset_generator.o"
-	@echo "... hw3/BasicMatrixMultiplication/dataset_generator.i"
-	@echo "... hw3/BasicMatrixMultiplication/dataset_generator.s"
-	@echo "... hw3/TiledMatrixMultiplication/dataset_generator.o"
-	@echo "... hw3/TiledMatrixMultiplication/dataset_generator.i"
-	@echo "... hw3/TiledMatrixMultiplication/dataset_generator.s"
+	@echo "... hw4/Histogram/dataset_generator.o"
+	@echo "... hw4/Histogram/dataset_generator.i"
+	@echo "... hw4/Histogram/dataset_generator.s"
 	@echo "... libwb/vendor/json11.o"
 	@echo "... libwb/vendor/json11.i"
 	@echo "... libwb/vendor/json11.s"
