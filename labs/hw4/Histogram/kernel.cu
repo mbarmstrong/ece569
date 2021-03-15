@@ -40,7 +40,7 @@ __global__ void histogram_shared_kernel(unsigned int *input, unsigned int *bins,
 	int stride = blockDim.x * gridDim.x; // total number of threads
 
 	// initialize privatized bins to 0
-	if (threadIdx.x < num_bins) bins_private[threadIdx.x] = 0;
+	if (threadIdx.x < 4096) bins_private[threadIdx.x] = 0;
 	__syncthreads();
 
 	// build local histogram
@@ -53,7 +53,7 @@ __global__ void histogram_shared_kernel(unsigned int *input, unsigned int *bins,
 	__syncthreads();
 
 	// build global histogram
-	if (threadIdx.x < num_bins) 
+	if (threadIdx.x < 4096) 
 		atomicAdd(&bins[threadIdx.x], bins_private[threadIdx.x]);
 }
 
