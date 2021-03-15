@@ -35,13 +35,14 @@ __global__ void histogram_shared_kernel(unsigned int *input, unsigned int *bins,
                                  unsigned int num_bins) {
 
 	// insert your code here
-	int i = threadIdx.x + blockIdx.x * blockDim.x; // index
 	__shared__ unsigned int bins_private[4096]; // privatized bins
-	int stride = blockDim.x * gridDim.x; // total number of threads
 
 	// initialize privatized bins to 0
 	if (threadIdx.x < 4096) bins_private[threadIdx.x] = 0;
 	__syncthreads();
+
+	int i = threadIdx.x + blockIdx.x * blockDim.x; // index
+	int stride = blockDim.x * gridDim.x; // total number of threads
 
 	// build local histogram
 	while (i < num_elements) {
