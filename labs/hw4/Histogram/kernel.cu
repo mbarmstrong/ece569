@@ -53,13 +53,11 @@ __global__ void histogram_shared_kernel(unsigned int *input, unsigned int *bins,
 	__syncthreads();
 
 	// build global histogram
-	for(int i = threadIdx.x; i < num_bins; i += num_bins) {
-		for (int j = 0; j < num_bins; j += 512) {
+	// for(int i = threadIdx.x; i < num_bins; i += num_bins) {
+		for (int j = 0; j < num_bins; j += blockDim.x) {
 			atomicAdd(&bins[threadIdx.x + j], bins_private[threadIdx.x + j]);
 		}
-	}
-	// if (threadIdx.x < 4096) 
-	// 	atomicAdd(&bins[threadIdx.x], bins_private[threadIdx.x]);
+	// }
 }
 
 
