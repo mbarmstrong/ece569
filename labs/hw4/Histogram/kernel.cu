@@ -11,6 +11,7 @@ The input length can be assumed to be less than 2^32. NUM_BINS is fixed at 4096.
 #include <thrust/device_ptr.h>
 #include <thrust/sort.h>
 #include <thrust/reduce.h>
+#include <thrust/execution_policy.h>
 
 // version 0
 // global memory only interleaved version
@@ -80,7 +81,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	thrust::device_ptr<unsigned int> input_ptr(input);
 	thrust::device_ptr<unsigned int> bins_ptr(bins);
 	// thrust::device_vector<unsigned int> input_sort(input_ptr);
-	thrust::sort(thrust::seq, input_ptr, input_ptr + num_elements); // sort input 
+	thrust::sort(thrust::device, input_ptr, input_ptr + num_elements); // sort input 
 
 
 
