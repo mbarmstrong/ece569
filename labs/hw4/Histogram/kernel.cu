@@ -84,9 +84,9 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 
 
 
-	thrust::device_vector<unsigned int> histo_values(4096);
+	thrust::device_vector<unsigned int> histo_values;
 	// thrust::device_vector<unsigned int> histo_counts;
-	// histo_values.resize(4096);
+	histo_values.resize(4096);
  //  	histo_counts.resize(4096);
 
 	thrust::reduce_by_key(thrust::device, input_ptr, input_ptr + num_elements, thrust::constant_iterator<int>(1), histo_values.begin(), bins_ptr);
