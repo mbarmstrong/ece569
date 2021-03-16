@@ -11,7 +11,6 @@ The input length can be assumed to be less than 2^32. NUM_BINS is fixed at 4096.
 #include <thrust/device_ptr.h>
 #include <thrust/sort.h>
 #include <thrust/reduce.h>
-#include <thrust/execution_policy.h>
 
 // version 0
 // global memory only interleaved version

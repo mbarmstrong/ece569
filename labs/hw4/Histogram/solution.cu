@@ -105,6 +105,8 @@ int main(int argc, char *argv[]) {
   unsigned int *deviceBins;
 
   cudaEvent_t astartEvent, astopEvent;
+  cudaError_t err = cudaDeviceSetLimit(cudaLimitMallocHeapSize, 1048576ULL*1024);
+
   float aelapsedTime;
   cudaEventCreate(&astartEvent);
   cudaEventCreate(&astopEvent);
