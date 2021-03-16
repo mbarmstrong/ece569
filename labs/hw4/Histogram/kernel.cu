@@ -92,6 +92,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 
 	thrust::reduce_by_key(thrust::device, input_ptr, input_ptr + num_elements, thrust::constant_iterator<int>(1), histo_values, bins_ptr);
 
+	bins = thrust::raw_pointer_cast(bins_ptr);
 	// int * ptr = thrust::raw_pointer_cast()
 	// for (int j = 0; j < num_bins; j += blockDim.x) {
 	// 	atomicAdd(&bins[threadIdx.x + j], histo_counts[threadIdx.x + j]);
