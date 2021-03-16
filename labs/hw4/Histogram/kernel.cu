@@ -80,7 +80,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	thrust::device_ptr<unsigned int> input_ptr(input);
 	thrust::device_ptr<unsigned int> bins_ptr(bins);
 	// thrust::device_vector<unsigned int> input_sort(input_ptr);
-	thrust::sort(thrust::device, input_ptr, input_ptr + num_elements); // sort input 
+	thrust::sort(thrust::seq, input_ptr, input_ptr + num_elements); // sort input 
 
 
 
