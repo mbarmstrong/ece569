@@ -86,14 +86,18 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 		int pos = input[i]; // bin position
 		int j = 0;
 		int count = 0;
+
 		if (pos >= 0 && pos < 4096) // boundary condition check
 			j = i + 1;
 			count = 1;
-			while (input[j] == input[i]) {
+			if (j < num_elements) {
+				while (input[j] == input[i]) {
 				count++;
 				j++;
+				}
 			}
 			atomicAdd(&bins_private[pos], count); // atomically increment appropriate privatized bin
+		
 		i += stride;
 	}
 	__syncthreads();
