@@ -158,7 +158,7 @@ int main(int argc, char *argv[]) {
 		unsigned int *lengths;
 		lengths = (unsigned int *)malloc(NUM_BINS * sizeof(unsigned int));
 
-		for (int i = 0; i < NUM_BINS; i++) lengths[i] = 0;
+		for (int i = 0; i < NUM_BINS; i++) lengths[i] = i;
 
   	thrust::device_vector<unsigned int> input_thrust(hostInput, hostInput + inputLength);
   	thrust::device_vector<unsigned int> bins_thrust(NUM_BINS);
