@@ -92,7 +92,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 			count = 0;
 			while (input[j] == input[i] && j < num_elements) {
 				count++;
-				j++;
+				j += stride;
 			}
 			atomicAdd(&bins_private[pos], count); // atomically increment appropriate privatized bin
 		
