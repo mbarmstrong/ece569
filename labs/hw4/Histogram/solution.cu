@@ -101,28 +101,28 @@ void histogram(unsigned int *input, unsigned int *bins,
   }
  }
 
-// else if (kernel_version==2) {
-//  // zero out bins
-//   CUDA_CHECK(cudaMemset(bins, 0, num_bins * sizeof(unsigned int)));
-//   // Launch histogram kernel on the bins
-//   {
-//     dim3 blockDim(512), gridDim(30);
-//     histogram_shared_accumulate_kernel<<<gridDim, blockDim,
-//                        num_bins * sizeof(unsigned int)>>>(
-//         input, bins, num_elements, num_bins);
-//     CUDA_CHECK(cudaGetLastError());
-//     CUDA_CHECK(cudaDeviceSynchronize());
-//   }
+else if (kernel_version==2) {
+ // zero out bins
+  CUDA_CHECK(cudaMemset(bins, 0, num_bins * sizeof(unsigned int)));
+  // Launch histogram kernel on the bins
+  {
+    dim3 blockDim(512), gridDim(30);
+    histogram_shared_accumulate_kernel<<<gridDim, blockDim,
+                       num_bins * sizeof(unsigned int)>>>(
+        input, bins, num_elements, num_bins);
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+  }
 
-//   // Make sure bin values are not too large
-//   {
-//     dim3 blockDim(512);
-//     dim3 gridDim((num_bins + blockDim.x - 1) / blockDim.x);
-//     convert_kernel<<<gridDim, blockDim>>>(bins, num_bins);
-//     CUDA_CHECK(cudaGetLastError());
-//     CUDA_CHECK(cudaDeviceSynchronize());
-//   }
-//  }
+  // Make sure bin values are not too large
+  {
+    dim3 blockDim(512);
+    dim3 gridDim((num_bins + blockDim.x - 1) / blockDim.x);
+    convert_kernel<<<gridDim, blockDim>>>(bins, num_bins);
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+  }
+ }
 
 
 }
@@ -175,54 +175,54 @@ int main(int argc, char *argv[]) {
 
   version = atoi(argv[5]);
 
-  if (version == 2) {	// thrust version 2 -- sorting based approach
-		unsigned int *lengths;
-		lengths = (unsigned int *)malloc(NUM_BINS * sizeof(unsigned int));
+  // if (version == 2) {	// thrust version 2 -- sorting based approach
+		// unsigned int *lengths;
+		// lengths = (unsigned int *)malloc(NUM_BINS * sizeof(unsigned int));
 
-		for (int i = 0; i < NUM_BINS; i++) lengths[i] = 0;
+		// for (int i = 0; i < NUM_BINS; i++) lengths[i] = 0;
 
-		cudaEventRecord(astartEvent, 0);
+		// cudaEventRecord(astartEvent, 0);
 
-  	thrust::device_vector<unsigned int> input_thrust(hostInput, hostInput + inputLength);
-  	thrust::device_vector<unsigned int> bins_thrust(NUM_BINS);
-  	thrust::device_vector<unsigned int> lengths_thrust(lengths, lengths + NUM_BINS);
+  // 	thrust::device_vector<unsigned int> input_thrust(hostInput, hostInput + inputLength);
+  // 	thrust::device_vector<unsigned int> bins_thrust(NUM_BINS);
+  // 	thrust::device_vector<unsigned int> lengths_thrust(lengths, lengths + NUM_BINS);
 
-  	thrust::sort(thrust::device, input_thrust.begin(), input_thrust.end()); // sort input vector
+  // 	thrust::sort(thrust::device, input_thrust.begin(), input_thrust.end()); // sort input vector
 
-  	thrust::reduce_by_key(thrust::device, input_thrust.begin(), input_thrust.end(), 
-  												thrust::constant_iterator<int>(1), lengths_thrust.begin(), bins_thrust.begin());
+  // 	thrust::reduce_by_key(thrust::device, input_thrust.begin(), input_thrust.end(), 
+  // 												thrust::constant_iterator<int>(1), bins_thrust.begin(), lengths_thrust.begin());
 
-  	// // find upper bounds of consecutive keys as indices (partition function)
-  	// thrust::upper_bound(thrust::device,
-   //                      input_thrust.begin(),input_thrust.end(),
-   //                      lengths_thrust.begin(),lengths_thrust.end(),
-   //                      bins_thrust.begin());
+  // 	// // find upper bounds of consecutive keys as indices (partition function)
+  // 	// thrust::upper_bound(thrust::device,
+  //  //                      input_thrust.begin(),input_thrust.end(),
+  //  //                      lengths_thrust.begin(),lengths_thrust.end(),
+  //  //                      bins_thrust.begin());
 
-  	// // compute the histogram by taking differences of the partition function (cumulative histogram)
-   //  thrust::adjacent_difference(thrust::device,
-   //                              bins_thrust.begin(), bins_thrust.end(),
-   //                              bins_thrust.begin());
+  // 	// // compute the histogram by taking differences of the partition function (cumulative histogram)
+  //  //  thrust::adjacent_difference(thrust::device,
+  //  //                              bins_thrust.begin(), bins_thrust.end(),
+  //  //                              bins_thrust.begin());
 
-    // clipping function for bins > 127
-    out_of_bounds<unsigned int> clip_predicate;
-    clipping_func<unsigned int> clip_operation;
-    thrust::transform_if(bins_thrust.begin(), bins_thrust.end(), bins_thrust.begin(), clip_operation, clip_predicate);
+  //   // clipping function for bins > 127
+  //   out_of_bounds<unsigned int> clip_predicate;
+  //   clipping_func<unsigned int> clip_operation;
+  //   thrust::transform_if(bins_thrust.begin(), bins_thrust.end(), bins_thrust.begin(), clip_operation, clip_predicate);
 
- 		cudaEventRecord(astopEvent, 0);
-    cudaEventSynchronize(astopEvent);
-    cudaEventElapsedTime(&aelapsedTime, astartEvent, astopEvent);
-    printf("\n");
-    printf("Total compute time (ms) %f for version %d\n",aelapsedTime,version);
-    printf("\n");
+ 	// 	cudaEventRecord(astopEvent, 0);
+  //   cudaEventSynchronize(astopEvent);
+  //   cudaEventElapsedTime(&aelapsedTime, astartEvent, astopEvent);
+  //   printf("\n");
+  //   printf("Total compute time (ms) %f for version %d\n",aelapsedTime,version);
+  //   printf("\n");
 
-    wbTime_start(Copy, "Copying output memory to the CPU");
+  //   wbTime_start(Copy, "Copying output memory to the CPU");
     
-    thrust::copy(bins_thrust.begin(), bins_thrust.end(), hostBins); // thrust copy
+  //   thrust::copy(bins_thrust.begin(), bins_thrust.end(), hostBins); // thrust copy
 
-    wbTime_stop(Copy, "Copying output memory to the CPU");
-  } 
+  //   wbTime_stop(Copy, "Copying output memory to the CPU");
+  // } 
 
-  else {
+  // else {
   	cudaEventRecord(astartEvent, 0);
 	  histogram(deviceInput, deviceBins, inputLength, NUM_BINS,version);
 	  // wbTime_stop(Compute, "Performing CUDA computation");
@@ -241,7 +241,7 @@ int main(int argc, char *argv[]) {
 	                        cudaMemcpyDeviceToHost));
 	  CUDA_CHECK(cudaDeviceSynchronize());
 	  wbTime_stop(Copy, "Copying output memory to the CPU");
-	}
+	// }
 
   // Verify correctness
   // -----------------------------------------------------

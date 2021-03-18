@@ -74,25 +74,53 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 
 	// insert your code here
 	// int i = threadIdx.x + blockIdx.x * blockDim.x; // index
-	// int stride = blockDim.x * gridDim.x; // total number of threads
-	// __shared__ unsigned int bins_private[4096]; // privatized bins
+	int stride = blockDim.x * gridDim.x; // total number of threads
+	__shared__ unsigned int bins_private[512][4096]; // privatized bins
+	for (int i = 0; i < 4096; i++) bins_private[threadIdx.x][i] = bins[i];
+	for (int i = threadIdx.x; i < 500000; i += 512) {
 
-	// if (threadIdx.x < 4096) bins_private[threadIdx.x] = 0;
-	// __syncthreads();
+	}
+	int j = 0;
+	while (j < num_elements) {
+		int pos = input[i]; // bin position
+		if (pos >= 0 && pos < 4096) // boundary condition check
+			bins_private[threadIdx.x][pos]++; // atomically increment appropriate privatized bin
+		j += stride;
+	}
 
-	// thrust::device_ptr<unsigned int> input_ptr(input);
-	// thrust::device_ptr<unsigned int> bins_ptr(bins);
-	// // thrust::device_vector<unsigned int> input_sort(input_ptr);
-	// unsigned int histo_values[4096];
+	for (int i = 0; i < 4096; i++) {
+        __syncthreads();
+        if (threadIdx.x < 64) {
+            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+64][i];
+        }
+        __syncthreads();
+        if (threadIdx.x < 32) {
+            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+32][i];
+        }
+        __syncthreads();
+        if (threadIdx.x < 16) {
+            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+16][i];
+        }
+        __syncthreads();
+        if (threadIdx.x < 8) {
+            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+8][i];
+        }
+        __syncthreads();
+        if (threadIdx.x < 4) {
+            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+4][i];
+        }
+        __syncthreads();
+        if (threadIdx.x < 2) {
+            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+2][i];
+        }
+        __syncthreads();
+        if (threadIdx.x == 0) {
+            bins_private[0][i] += bins_private[1][i];
+        }
+    }
 
-	// thrust::sort(thrust::device, input_ptr, input_ptr + num_elements); // sort input 
-	// thrust::reduce_by_key(thrust::device, input_ptr, input_ptr + num_elements, thrust::constant_iterator<int>(1), histo_values, bins_ptr);
-
-	// bins_private = thrust::raw_pointer_cast(bins_ptr);
+    for (int i = 0; i < 4096; i++) bins[i] = bins_private[0][i];
 	
-	// for (int j = 0; j < num_bins; j += blockDim.x) {
-	// 	atomicAdd(&bins[threadIdx.x + j], bins_private[threadIdx.x + j]);
-	// }
 
 	// sorting based approach
 	// reduce by key
