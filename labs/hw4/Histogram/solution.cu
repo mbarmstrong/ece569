@@ -181,28 +181,30 @@ int main(int argc, char *argv[]) {
     wbTime_start(Copy, "Copying output memory to the CPU");
     
     thrust::copy(bins_thrust.begin(), bins_thrust.end(), hostBins); // thrust copy
-    
+
     wbTime_stop(Copy, "Copying output memory to the CPU");
   } 
 
-  cudaEventRecord(astartEvent, 0);
-  histogram(deviceInput, deviceBins, inputLength, NUM_BINS,version);
-  // wbTime_stop(Compute, "Performing CUDA computation");
+  else {
+  	cudaEventRecord(astartEvent, 0);
+	  histogram(deviceInput, deviceBins, inputLength, NUM_BINS,version);
+	  // wbTime_stop(Compute, "Performing CUDA computation");
 
-  cudaEventRecord(astopEvent, 0);
-  cudaEventSynchronize(astopEvent);
-  cudaEventElapsedTime(&aelapsedTime, astartEvent, astopEvent);
-  printf("\n");
-  printf("Total compute time (ms) %f for version %d\n",aelapsedTime,version);
-  printf("\n");
+	  cudaEventRecord(astopEvent, 0);
+	  cudaEventSynchronize(astopEvent);
+	  cudaEventElapsedTime(&aelapsedTime, astartEvent, astopEvent);
+	  printf("\n");
+	  printf("Total compute time (ms) %f for version %d\n",aelapsedTime,version);
+	  printf("\n");
 
-  wbTime_start(Copy, "Copying output memory to the CPU");
-  //@@ Copy the GPU memory back to the CPU here
-  CUDA_CHECK(cudaMemcpy(hostBins, deviceBins,
-                        NUM_BINS * sizeof(unsigned int),
-                        cudaMemcpyDeviceToHost));
-  CUDA_CHECK(cudaDeviceSynchronize());
-  wbTime_stop(Copy, "Copying output memory to the CPU");
+	  wbTime_start(Copy, "Copying output memory to the CPU");
+	  //@@ Copy the GPU memory back to the CPU here
+	  CUDA_CHECK(cudaMemcpy(hostBins, deviceBins,
+	                        NUM_BINS * sizeof(unsigned int),
+	                        cudaMemcpyDeviceToHost));
+	  CUDA_CHECK(cudaDeviceSynchronize());
+	  wbTime_stop(Copy, "Copying output memory to the CPU");
+	}
 
   // Verify correctness
   // -----------------------------------------------------
