@@ -1,0 +1,13 @@
+0.62user 0.27system 0:01.24elapsed 72%CPU (0avgtext+0avgdata 155780maxresident)k
+3176inputs+24outputs (1major+25256minor)pagefaults 0swaps
+0.57user 0.23system 0:00.87elapsed 92%CPU (0avgtext+0avgdata 155780maxresident)k
+64inputs+24outputs (0major+25252minor)pagefaults 0swaps
+0.61user 0.24system 0:00.93elapsed 92%CPU (0avgtext+0avgdata 155780maxresident)k
+136inputs+32outputs (0major+25261minor)pagefaults 0swaps
+0.59user 0.24system 0:00.90elapsed 92%CPU (0avgtext+0avgdata 155780maxresident)k
+72inputs+24outputs (0major+25253minor)pagefaults 0swaps
+0.73user 0.21system 0:01.02elapsed 93%CPU (0avgtext+0avgdata 155780maxresident)k
+304inputs+24outputs (0major+25282minor)pagefaults 0swaps
+1.16user 0.23system 0:01.48elapsed 94%CPU (0avgtext+0avgdata 155780maxresident)k
+960inputs+24outputs (0major+25364minor)pagefaults 0swaps
+=>> PBS: job killed: walltime 11 exceeded limit 10
