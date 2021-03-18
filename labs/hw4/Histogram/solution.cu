@@ -153,16 +153,18 @@ int main(int argc, char *argv[]) {
   version = atoi(argv[5]);
 
   if (version == 2) {	// thrust version
-  	cudaEventRecord(astartEvent, 0);
+  	// cudaEventRecord(astartEvent, 0);
 
 		unsigned int *lengths;
 		lengths = (unsigned int *)malloc(NUM_BINS * sizeof(unsigned int));
 
-		for (int i = 0; i < NUM_BINS; i++) lengths[i] = i;
+		for (int i = 0; i < NUM_BINS; i++) lengths[i] = 0;
 
   	thrust::device_vector<unsigned int> input_thrust(hostInput, hostInput + inputLength);
   	thrust::device_vector<unsigned int> bins_thrust(NUM_BINS);
   	thrust::device_vector<unsigned int> lengths_thrust(lengths, lengths + NUM_BINS);
+
+    cudaEventRecord(astartEvent, 0);
 
   	thrust::sort(thrust::device, input_thrust.begin(), input_thrust.end()); // sort input vector
 
