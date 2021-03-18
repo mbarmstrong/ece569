@@ -167,7 +167,7 @@ int main(int argc, char *argv[]) {
   	thrust::sort(thrust::device, input_thrust.begin(), input_thrust.end()); // sort input vector
 
   	thrust::reduce_by_key(thrust::device, input_thrust.begin(), input_thrust.end(), 
-  												thrust::constant_iterator<int>(1), bins_thrust.begin(), lengths.begin());
+  												thrust::constant_iterator<int>(1), bins_thrust.begin(), lengths_thrust.begin());
 
   	// thrust::transform_if();
 
