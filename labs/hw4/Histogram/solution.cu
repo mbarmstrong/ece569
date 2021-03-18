@@ -174,26 +174,24 @@ int main(int argc, char *argv[]) {
 
   version = atoi(argv[5]);
 
-  if (version == 2) {	// thrust version
-  	cudaEventRecord(astartEvent, 0);
-
+  if (version == 2) {	// thrust version 2 -- sorting based approach
 		unsigned int *lengths;
 		lengths = (unsigned int *)malloc(NUM_BINS * sizeof(unsigned int));
 
 		for (int i = 0; i < NUM_BINS; i++) lengths[i] = i;
 
+		cudaEventRecord(astartEvent, 0);
+
   	thrust::device_vector<unsigned int> input_thrust(hostInput, hostInput + inputLength);
   	thrust::device_vector<unsigned int> bins_thrust(NUM_BINS);
   	thrust::device_vector<unsigned int> lengths_thrust(lengths, lengths + NUM_BINS);
-
-    // cudaEventRecord(astartEvent, 0);
 
   	thrust::sort(thrust::device, input_thrust.begin(), input_thrust.end()); // sort input vector
 
   	// thrust::reduce_by_key(thrust::device, input_thrust.begin(), input_thrust.end(), 
   	// 											thrust::constant_iterator<int>(1), bins_thrust.begin(), lengths_thrust.begin());
 
-  	// find where are the upper bounds of consecutive keys as indices (partition function)
+  	// find upper bounds of consecutive keys as indices (partition function)
   	thrust::upper_bound(thrust::device,
                         input_thrust.begin(),input_thrust.end(),
                         lengths_thrust.begin(),lengths_thrust.end(),
