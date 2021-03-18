@@ -82,7 +82,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	}
 	int j = 0;
 	while (j < num_elements) {
-		int pos = input[i]; // bin position
+		int pos = input[j]; // bin position
 		if (pos >= 0 && pos < 4096) // boundary condition check
 			bins_private[threadIdx.x][pos]++; // atomically increment appropriate privatized bin
 		j += stride;
