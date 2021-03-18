@@ -33,25 +33,25 @@ inline void gpuAssert(cudaError_t code, const char *file, int line,
 
 /* structs for thrust use */
 
-template<typename T>
- struct out_of_bounds
- {
-   typedef T argument_type;
-   typedef bool result_type;
+// template<typename T>
+//  struct out_of_bounds
+//  {
+//    typedef T argument_type;
+//    typedef bool result_type;
  
-   __thrust_exec_check_disable__
-   __host__ __device__ bool operator()(const T &lhs) const { return lhs > 127; }
- };
+//    __thrust_exec_check_disable__
+//    __host__ __device__ bool operator()(const T &lhs) const { return lhs > 127; }
+//  };
 
-template<typename T>
- struct clipping_func
- {
-   typedef T argument_type;
-   typedef T result_type;
+// template<typename T>
+//  struct clipping_func
+//  {
+//    typedef T argument_type;
+//    typedef T result_type;
  
-   __thrust_exec_check_disable__
-   __host__ __device__ T operator()(const T &x) const { return 127; }
- };
+//    __thrust_exec_check_disable__
+//    __host__ __device__ T operator()(const T &x) const { return 127; }
+//  };
 
 void histogram(unsigned int *input, unsigned int *bins,
                unsigned int num_elements, unsigned int num_bins, int kernel_version) {

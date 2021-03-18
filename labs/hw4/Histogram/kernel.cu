@@ -73,54 +73,36 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
                                  unsigned int num_bins) {
 
 	// insert your code here
-	// int i = threadIdx.x + blockIdx.x * blockDim.x; // index
+	__shared__ unsigned int bins_private[4096]; // privatized bins
+	int i = threadIdx.x + blockIdx.x * blockDim.x; // index
 	int stride = blockDim.x * gridDim.x; // total number of threads
-	__shared__ unsigned int bins_private[512][4096]; // privatized bins
-	for (int i = 0; i < 4096; i++) bins_private[threadIdx.x][i] = bins[i];
-	for (int i = threadIdx.x; i < 500000; i += 512) {
 
-	}
-	int j = 0;
-	while (j < num_elements) {
-		int pos = input[j]; // bin position
+	// initialize privatized bins to 0
+	if (threadIdx.x < 4096) bins_private[threadIdx.x] = 0;
+	__syncthreads();
+
+	// build local histogram
+	while (i < num_elements) {
+		int pos = input[i]; // bin position
 		if (pos >= 0 && pos < 4096) // boundary condition check
-			bins_private[threadIdx.x][pos]++; // atomically increment appropriate privatized bin
-		j += stride;
+			int j = i;
+			int count = 0;
+			while (input[j] == input[i]) {
+				count++;
+				j++;
+			}
+			atomicAdd(&bins_private[pos], count); // atomically increment appropriate privatized bin
+		i += stride;
+	}
+	__syncthreads();
+
+	// build global histogram
+	// number of bins > block size -- need multiple bins per thread
+	for (int j = 0; j < num_bins; j += blockDim.x) {
+		atomicAdd(&bins[threadIdx.x + j], bins_private[threadIdx.x + j]);
 	}
 
-	for (int i = 0; i < 4096; i++) {
-        __syncthreads();
-        if (threadIdx.x < 64) {
-            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+64][i];
-        }
-        __syncthreads();
-        if (threadIdx.x < 32) {
-            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+32][i];
-        }
-        __syncthreads();
-        if (threadIdx.x < 16) {
-            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+16][i];
-        }
-        __syncthreads();
-        if (threadIdx.x < 8) {
-            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+8][i];
-        }
-        __syncthreads();
-        if (threadIdx.x < 4) {
-            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+4][i];
-        }
-        __syncthreads();
-        if (threadIdx.x < 2) {
-            bins_private[threadIdx.x][i] += bins_private[threadIdx.x+2][i];
-        }
-        __syncthreads();
-        if (threadIdx.x == 0) {
-            bins_private[0][i] += bins_private[1][i];
-        }
-    }
-
-    for (int i = 0; i < 4096; i++) bins[i] = bins_private[0][i];
-	
+	// counter to track if multiple bins are being updated sequentially, only one atomic add needed
 
 	// sorting based approach
 	// reduce by key
