@@ -90,11 +90,9 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 		if (pos >= 0 && pos < 4096) // boundary condition check
 			j = i + 1;
 			count = 1;
-			if (j < num_elements) {
-				while (input[j] == input[i]) {
+			while (input[j] == input[i] && j < num_elements) {
 				count++;
 				j++;
-				}
 			}
 			atomicAdd(&bins_private[pos], count); // atomically increment appropriate privatized bin
 		
