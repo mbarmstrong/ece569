@@ -82,11 +82,13 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	__syncthreads();
 
 	// build local histogram
+	int j = 0;
+	int count = 0;
 	while (i < num_elements) {
 		int pos = input[i]; // bin position
 		if (pos >= 0 && pos < 4096) // boundary condition check
-			int j = i;
-			int count = 0;
+			j = i;
+			count = 0;
 			while (input[j] == input[i]) {
 				count++;
 				j++;
