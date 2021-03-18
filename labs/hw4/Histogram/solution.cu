@@ -162,8 +162,7 @@ int main(int argc, char *argv[]) {
 
   	thrust::device_vector<unsigned int> input_thrust(hostInput, hostInput + inputLength);
   	thrust::device_vector<unsigned int> bins_thrust(NUM_BINS);
-  	// thrust::device_vector<unsigned int> lengths_thrust(lengths, lengths + NUM_BINS);
-  	thrust::device_vector<unsigned int> lengths_thrust(NUM_BINS);
+  	thrust::device_vector<unsigned int> lengths_thrust(lengths, lengths + NUM_BINS);
 
     // cudaEventRecord(astartEvent, 0);
 
