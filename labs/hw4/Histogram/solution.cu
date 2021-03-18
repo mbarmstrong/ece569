@@ -13,6 +13,7 @@
 #include <thrust/host_vector.h>
 #include <thrust/copy.h>
 #include <thrust/sort.h>
+#include <thrust/reduce.h>
 #include <thrust/transform.h>
 #include <thrust/binary_search.h>
 #include <thrust/adjacent_difference.h>
