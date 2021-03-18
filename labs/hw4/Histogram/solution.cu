@@ -30,6 +30,28 @@ inline void gpuAssert(cudaError_t code, const char *file, int line,
   }
 }
 
+/* structs for thrust use */
+
+template<typename T>
+ struct out_of_bounds
+ {
+   typedef T argument_type;
+   typedef bool result_type;
+ 
+   __thrust_exec_check_disable__
+   __host__ __device__ bool operator()(const T &lhs) const { return lhs > 127; }
+ };
+
+template<typename T>
+ struct clipping_func
+ {
+   typedef T argument_type;
+   typedef T result_type;
+ 
+   __thrust_exec_check_disable__
+   __host__ __device__ T operator()(const T &x) const { return 127; }
+ };
+
 void histogram(unsigned int *input, unsigned int *bins,
                unsigned int num_elements, unsigned int num_bins, int kernel_version) {
 
@@ -181,6 +203,12 @@ int main(int argc, char *argv[]) {
     thrust::adjacent_difference(thrust::device,
                                 bins_thrust.begin(), bins_thrust.end(),
                                 bins_thrust.begin());
+
+    // clipping function for bins > 127
+    out_of_bounds<unsigned int> clip_predicate;
+    clipping_func<unsigned int> clip_operation;
+    thrust::transform_if(bins_thrust.begin(); bins_thrust.end(); bins_thrust.begin(); clip_operation; clip_predicate);
+
 
  		cudaEventRecord(astopEvent, 0);
     cudaEventSynchronize(astopEvent);
