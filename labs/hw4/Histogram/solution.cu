@@ -4,7 +4,7 @@
 // tests for functional verification
 
 #include <cuda_runtime.h>
-#include<stdlib.h>
+#include <stdlib.h>
 #include <wb.h>
 #include "kernel.cu"
 #define NUM_BINS 4096
@@ -78,28 +78,28 @@ void histogram(unsigned int *input, unsigned int *bins,
   }
  }
 
-else if (kernel_version==2) {
- // zero out bins
-  CUDA_CHECK(cudaMemset(bins, 0, num_bins * sizeof(unsigned int)));
-  // Launch histogram kernel on the bins
-  {
-    dim3 blockDim(512), gridDim(30);
-    histogram_shared_accumulate_kernel<<<gridDim, blockDim,
-                       num_bins * sizeof(unsigned int)>>>(
-        input, bins, num_elements, num_bins);
-    CUDA_CHECK(cudaGetLastError());
-    CUDA_CHECK(cudaDeviceSynchronize());
-  }
+// else if (kernel_version==2) {
+//  // zero out bins
+//   CUDA_CHECK(cudaMemset(bins, 0, num_bins * sizeof(unsigned int)));
+//   // Launch histogram kernel on the bins
+//   {
+//     dim3 blockDim(512), gridDim(30);
+//     histogram_shared_accumulate_kernel<<<gridDim, blockDim,
+//                        num_bins * sizeof(unsigned int)>>>(
+//         input, bins, num_elements, num_bins);
+//     CUDA_CHECK(cudaGetLastError());
+//     CUDA_CHECK(cudaDeviceSynchronize());
+//   }
 
-  // Make sure bin values are not too large
-  {
-    dim3 blockDim(512);
-    dim3 gridDim((num_bins + blockDim.x - 1) / blockDim.x);
-    convert_kernel<<<gridDim, blockDim>>>(bins, num_bins);
-    CUDA_CHECK(cudaGetLastError());
-    CUDA_CHECK(cudaDeviceSynchronize());
-  }
- }
+//   // Make sure bin values are not too large
+//   {
+//     dim3 blockDim(512);
+//     dim3 gridDim((num_bins + blockDim.x - 1) / blockDim.x);
+//     convert_kernel<<<gridDim, blockDim>>>(bins, num_bins);
+//     CUDA_CHECK(cudaGetLastError());
+//     CUDA_CHECK(cudaDeviceSynchronize());
+//   }
+//  }
 
 
 }
@@ -166,10 +166,17 @@ int main(int argc, char *argv[]) {
 
   	thrust::sort(thrust::device, input_thrust.begin(), input_thrust.end()); // sort input vector
 
-  	thrust::reduce_by_key(thrust::device, input_thrust.begin(), input_thrust.end(), 
+  	// thrust::reduce_by_key(thrust::device, input_thrust.begin(), input_thrust.end(), 
   												thrust::constant_iterator<int>(1), bins_thrust.begin(), lengths_thrust.begin());
 
-  	// thrust::transform_if();
+  	thrust::upper_bound(thrust::device,
+                        input_thrust.begin(),input_thrust.end(),
+                        binwidths_thrust.begin(),binwidths_thrust.end(),
+                        bins_thrust.begin());
+
+    thrust::adjacent_difference(thrust::device,
+                                bins_thrust.begin(), bins_thrust.end(),
+                                bins_thrust.begin());
 
  		cudaEventRecord(astopEvent, 0);
     cudaEventSynchronize(astopEvent);
