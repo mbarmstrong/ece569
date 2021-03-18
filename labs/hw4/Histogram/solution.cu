@@ -207,7 +207,6 @@ int main(int argc, char *argv[]) {
     clipping_func<unsigned int> clip_operation;
     thrust::transform_if(bins_thrust.begin(), bins_thrust.end(), bins_thrust.begin(), clip_operation, clip_predicate);
 
-
  		cudaEventRecord(astopEvent, 0);
     cudaEventSynchronize(astopEvent);
     cudaEventElapsedTime(&aelapsedTime, astartEvent, astopEvent);
