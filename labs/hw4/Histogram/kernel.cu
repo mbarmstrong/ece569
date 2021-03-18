@@ -88,7 +88,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 		int pos = input[i]; // bin position
 		if (pos >= 0 && pos < 4096) // boundary condition check
 			j = i;
-			count = 0;
+			count = 1;
 			while (input[j] == input[i]) {
 				count++;
 				j++;
