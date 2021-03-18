@@ -96,7 +96,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 			}
 			atomicAdd(&bins_private[pos], count); // atomically increment appropriate privatized bin
 		
-		i += stride;
+		i += stride * count;
 	}
 	__syncthreads();
 
