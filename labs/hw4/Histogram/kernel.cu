@@ -88,8 +88,6 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	// build local histogram
 	while (i < num_elements) {
 		int pos = input[i]; // bin position
-		
-		// variables for 
 		int j = 0;
 		int count = 0;
 
@@ -115,7 +113,8 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	// build global histogram
 	// number of bins > block size -- need multiple bins per thread
 	for (int j = 0; j < num_bins; j += blockDim.x) {
-		atomicAdd(&bins[threadIdx.x + j], bins_private[threadIdx.x + j]);
+		if (bins_private[threadIdx.x + j] > 0)
+			atomicAdd(&bins[threadIdx.x + j], bins_private[threadIdx.x + j]);
 	}
 }
 
