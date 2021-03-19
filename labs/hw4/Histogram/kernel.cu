@@ -21,13 +21,17 @@ __global__ void histogram_global_kernel(unsigned int *input, unsigned int *bins,
 
 	// insert your code here
 	int i = threadIdx.x + blockIdx.x * blockDim.x; // index
-	int stride = blockDim.x * gridDim.x; // total number of threads
+	int stride = blockDim.x * gridDim.x; // total number of threads launched
 
-	while (i < num_elements) {
+	while (i < num_elements) { // iterate through elements in input
 		int pos = input[i]; // bin position
-		if (pos >= 0 && pos < num_bins) // boundary condition check
+		if (pos >= 0 && pos < num_bins) // boundary check -- make sure value is a valid bin
 			atomicAdd(&bins[pos], 1); // atomically increment appropriate bin
-		i += stride;
+		
+		// interleaved partitioning for coalesced access pattern
+		// all threads access consecutive elements then move to next section
+		// therefore increment by total number of threads launched
+		i += stride; 
 	}
 }
 
@@ -84,18 +88,26 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	// build local histogram
 	while (i < num_elements) {
 		int pos = input[i]; // bin position
+		
+		// variables for 
 		int j = 0;
 		int count = 0;
 
 		if (pos >= 0 && pos < 4096)  { // boundary condition check
-			j = i;
-			count = 0;
-			while (input[j] == input[i] && j < num_elements) {
-				count++;
-				j += stride;
+			j = i; // set j to index value
+			count = 0; // clear count value
+
+			// check if following input values are equal to current input value
+			// make sure that following values are still within bounds
+			while (input[j] == pos && j < num_elements) {
+				count++; // if equal, increment counter
+				j += stride; // increment j by stride amount to check next value
 			}
 			atomicAdd(&bins_private[pos], count); // atomically increment appropriate privatized bin
 		}
+		// increment i by stride multiplied by the counter value, i.e. the number of 
+		// contiguous input values that were equal and already added to the appropriate bin
+		// this is to avoid redundant checking and incrementing
 		i += stride * count;
 	}
 	__syncthreads();
@@ -105,13 +117,6 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 	for (int j = 0; j < num_bins; j += blockDim.x) {
 		atomicAdd(&bins[threadIdx.x + j], bins_private[threadIdx.x + j]);
 	}
-
-	// counter to track if multiple bins are being updated sequentially, only one atomic add needed
-
-	// sorting based approach
-	// reduce by key
-	// compression before reduction
-
 }
 
 // clipping function
