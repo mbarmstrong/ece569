@@ -95,7 +95,7 @@ __global__ void histogram_shared_accumulate_kernel(unsigned int *input, unsigned
 			j = i; // set j to index value
 			count = 0; // clear count value
 
-			// check if following input values are equal to current input value
+			// check if following input values (along stride pattern) are equal to current input value
 			// make sure that following values are still within bounds
 			while (input[j] == pos && j < num_elements) {
 				count++; // if equal, increment counter
