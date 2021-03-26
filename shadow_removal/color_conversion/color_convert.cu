@@ -5,7 +5,7 @@
 	cudaError_t err = stmt;                                             \
 	if (err != cudaSuccess) {                                        	\
 		wbLog(ERROR, "Failed to run stmt ", #stmt);                    	\
-	   	wbLog(ERROR, "Got CUDA error ...  ", cudaGetErrorString(err)); 	\
+	   	wbLog(ERROR, "Got CUDA error ... ", cudaGetErrorString(err)); 	\
 	 	return -1;                                                     	\
   	}                                                                   \
 } while (0)
@@ -37,8 +37,9 @@ __global__ void color_convert(float *rgbImage, float *invImage, float *grayImage
 	    invImage[numChannels * idx + 2] = c3;
 
 	    // calculate invariant to grayscale
+	    // based off matlab function rgb2gray
 	    // store new value in output grayscale image
-	    grayImage[idx] = (0.21 * c1) + (0.71 * c2) + (0.07 * c3); 
+	    grayImage[idx] = (0.299 * c1) + (0.587 * c2) + (0.114 * c3); 
 
 	    // calculate RGB to YUV
 
@@ -47,7 +48,7 @@ __global__ void color_convert(float *rgbImage, float *invImage, float *grayImage
 	    float u = (r * -37.797)	+ (g * -74.203)	+ (b * 112.000)	+ 128.0;	// blue chrominance component
 	    float v = (r * 112.000)	+ (g * -93.786)	+ (b * -18.214)	+ 128.0;	// red chrominance component
 
-	    // based off nvidia function RGBToYCbCr
+	    //// based off nvidia function RGBToYCbCr
 	    // float y = (r * 0.257)	+ (g * 0.504) 	+ (b * 0.098)	+ 16.0;  	// luminance component
 	    // float u = (r * -0.148) 	+ (g * -0.291)	+ (b * 0.439) 	+ 128.0;  	// blue chrominance component
 	    // float v = (r * 0.439) 	+ (g * -0.368) 	+ (b * -0.071) 	+ 128.0;  	// red chrominance component
@@ -149,14 +150,17 @@ int main(int argc, char *argv[]) {
   	char *inputImageFile;
 
 	wbImage_t inputImage_RGB;
+	wbImage_t outputImage_Inv;
 	wbImage_t outputImage_Gray;
   	wbImage_t outputImage_YUV;
 
   	float *hostInputImageData_RGB;
+  	float *hostOutputImageData_Inv;
   	float *hostOutputImageData_Gray;
   	float *hostOutputImageData_YUV;
 
   	float *deviceInputImageData_RGB;
+  	float *deviceOutputImageData_Inv;
   	float *deviceOutputImageData_Gray;
   	float *deviceOutputImageData_YUV;
 
@@ -165,14 +169,16 @@ int main(int argc, char *argv[]) {
   	inputImageFile = wbArg_getInputFile(args, 0);
   	inputImage_RGB = wbImport(inputImageFile);
 
-  	imageWidth  = wbImage_getWidth(inputImage_RGB);
+  	imageWidth = wbImage_getWidth(inputImage_RGB);
   	imageHeight = wbImage_getHeight(inputImage_RGB);
   	imageChannels = wbImage_getChannels(inputImage_RGB);
 
+  	outputImage_Inv = wbImage_new(imageWidth, imageHeight, 3);
   	outputImage_Gray = wbImage_new(imageWidth, imageHeight, 3);
   	outputImage_YUV = wbImage_new(imageWidth, imageHeight, 3);
 
   	hostInputImageData_RGB = wbImage_getData(inputImage_RGB);
+  	hostOutputImageData_Inv = wbImage_getData(outputImage_Inv);
   	hostOutputImageData_Gray = wbImage_getData(outputImage_Gray);
   	hostOutputImageData_YUV = wbImage_getData(outputImage_YUV);
 
@@ -193,8 +199,6 @@ int main(int argc, char *argv[]) {
             	cudaMemcpyHostToDevice);
   	wbTime_stop(Copy, "Copying data to the GPU");
 
-  	///////////////////////////////////////////////////////
-
   	wbTime_start(Compute, "Doing the computation on the GPU");
 
   	// defining grid size (num blocks) and block size (num threads per block)
@@ -202,36 +206,34 @@ int main(int argc, char *argv[]) {
   	dim3 myBlock(16, 16, 1);
 
   	// launch kernel
-  	color_convert<<<myGrid, myBlock>>>(deviceInputImageData_RGB, deviceOutputImageData_Invariant, 
+  	color_convert<<<myGrid, myBlock>>>(deviceInputImageData_RGB, deviceOutputImageData_Inv, 
   									   deviceOutputImageData_Gray, deviceOutputImageData_YUV, 
   									   imageWidth, imageHeight, imageChannels);
-	// convert_rgb_invariant<<<myGrid, myBlock>>>(deviceInputImageData_RGB, deviceOutputImageData_Invariant, imageWidth, imageHeight, imageChannels);
-	// convert_invariant_grayscale<<<myGrid, myBlock>>>(deviceInputImageData_Invariant, deviceOutputImageData_Gray, imageWidth, imageHeight, imageChannels);
+	// convert_rgb_invariant<<<myGrid, myBlock>>>(deviceInputImageData_RGB, deviceOutputImageData_Inv, imageWidth, imageHeight, imageChannels);
+	// convert_invariant_grayscale<<<myGrid, myBlock>>>(deviceOutputImageData_Inv, deviceOutputImageData_Gray, imageWidth, imageHeight, imageChannels);
  	// convert_rgb_yuv<<<myGrid, myBlock>>>(deviceInputImageData_RGB, deviceOutputImageData_YUV, imageWidth, imageHeight, imageChannels);
   	
   	wbTime_stop(Compute, "Doing the computation on the GPU");
 
-  	///////////////////////////////////////////////////////
-
   	wbTime_start(Copy, "Copying data from the GPU");
+  	cudaMemcpy(hostOutputImageData_Inv, deviceOutputImageData_Inv,
+    		   imageWidth * imageHeight * sizeof(float), cudaMemcpyDeviceToHost);
   	cudaMemcpy(hostOutputImageData_Gray, deviceOutputImageData_Gray,
-            	imageWidth * imageHeight * sizeof(float),
-            	cudaMemcpyDeviceToHost);
+    		   imageWidth * imageHeight * sizeof(float), cudaMemcpyDeviceToHost);
   	cudaMemcpy(hostOutputImageData_YUV, deviceOutputImageData_YUV,
-            	imageWidth * imageHeight * sizeof(float),
-            	cudaMemcpyDeviceToHost);
+    		   imageWidth * imageHeight * sizeof(float), cudaMemcpyDeviceToHost);
   	wbTime_stop(Copy, "Copying data from the GPU");
 
   	wbTime_stop(GPU, "Doing GPU Computation (memory + compute)");
 
-  	wbSolution(args, outputImage_Gray, outputImage_YUV);
+  	wbSolution(args, outputImage_Inv, outputImage_Gray, outputImage_YUV);
 
   	cudaFree(deviceInputImageData_RGB);
-  	cudaFree(deviceInputImageData_Invariant);
+  	cudaFree(deviceOutputImageData_Inv);
   	cudaFree(deviceOutputImageData_Gray);
   	cudaFree(deviceOutputImageData_YUV);
 
-  	wbImage_delete(outputImage_Invariant);
+  	wbImage_delete(outputImage_Inv);
   	wbImage_delete(outputImage_Gray);
   	wbImage_delete(outputImage_YUV);
   	wbImage_delete(inputImage_RGB);
