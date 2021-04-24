@@ -43,7 +43,7 @@ RM = /usr/bin/cmake3 -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/u30/mbarmstrong/ece569/labs
+CMAKE_SOURCE_DIR = /home/u30/mbarmstrong/ece569/shadow_removal
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/u30/mbarmstrong/ece569/build_dir
@@ -58,17 +58,17 @@ include CMakeFiles/wb.dir/progress.make
 include CMakeFiles/wb.dir/flags.make
 
 CMakeFiles/wb.dir/libwb/wbArg.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbArg.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbArg.cpp
+CMakeFiles/wb.dir/libwb/wbArg.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbArg.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/wb.dir/libwb/wbArg.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbArg.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbArg.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbArg.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbArg.cpp
 
 CMakeFiles/wb.dir/libwb/wbArg.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbArg.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbArg.cpp > CMakeFiles/wb.dir/libwb/wbArg.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbArg.cpp > CMakeFiles/wb.dir/libwb/wbArg.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbArg.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbArg.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbArg.cpp -o CMakeFiles/wb.dir/libwb/wbArg.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbArg.cpp -o CMakeFiles/wb.dir/libwb/wbArg.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbArg.cpp.o.requires:
 
@@ -82,17 +82,17 @@ CMakeFiles/wb.dir/libwb/wbArg.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wbAr
 
 
 CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbCUDA.cpp
+CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbCUDA.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbCUDA.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbCUDA.cpp
 
 CMakeFiles/wb.dir/libwb/wbCUDA.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbCUDA.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbCUDA.cpp > CMakeFiles/wb.dir/libwb/wbCUDA.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbCUDA.cpp > CMakeFiles/wb.dir/libwb/wbCUDA.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbCUDA.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbCUDA.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbCUDA.cpp -o CMakeFiles/wb.dir/libwb/wbCUDA.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbCUDA.cpp -o CMakeFiles/wb.dir/libwb/wbCUDA.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o.requires:
 
@@ -106,17 +106,17 @@ CMakeFiles/wb.dir/libwb/wbCUDA.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wbC
 
 
 CMakeFiles/wb.dir/libwb/wbDataset.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbDataset.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbDataset.cpp
+CMakeFiles/wb.dir/libwb/wbDataset.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbDataset.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/wb.dir/libwb/wbDataset.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbDataset.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbDataset.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbDataset.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbDataset.cpp
 
 CMakeFiles/wb.dir/libwb/wbDataset.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbDataset.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbDataset.cpp > CMakeFiles/wb.dir/libwb/wbDataset.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbDataset.cpp > CMakeFiles/wb.dir/libwb/wbDataset.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbDataset.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbDataset.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbDataset.cpp -o CMakeFiles/wb.dir/libwb/wbDataset.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbDataset.cpp -o CMakeFiles/wb.dir/libwb/wbDataset.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbDataset.cpp.o.requires:
 
@@ -130,17 +130,17 @@ CMakeFiles/wb.dir/libwb/wbDataset.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/
 
 
 CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbDirectory.cpp
+CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbDirectory.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbDirectory.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbDirectory.cpp
 
 CMakeFiles/wb.dir/libwb/wbDirectory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbDirectory.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbDirectory.cpp > CMakeFiles/wb.dir/libwb/wbDirectory.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbDirectory.cpp > CMakeFiles/wb.dir/libwb/wbDirectory.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbDirectory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbDirectory.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbDirectory.cpp -o CMakeFiles/wb.dir/libwb/wbDirectory.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbDirectory.cpp -o CMakeFiles/wb.dir/libwb/wbDirectory.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o.requires:
 
@@ -154,17 +154,17 @@ CMakeFiles/wb.dir/libwb/wbDirectory.cpp.o.provides.build: CMakeFiles/wb.dir/libw
 
 
 CMakeFiles/wb.dir/libwb/wbExit.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbExit.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbExit.cpp
+CMakeFiles/wb.dir/libwb/wbExit.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbExit.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/wb.dir/libwb/wbExit.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbExit.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbExit.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbExit.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbExit.cpp
 
 CMakeFiles/wb.dir/libwb/wbExit.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbExit.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbExit.cpp > CMakeFiles/wb.dir/libwb/wbExit.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbExit.cpp > CMakeFiles/wb.dir/libwb/wbExit.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbExit.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbExit.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbExit.cpp -o CMakeFiles/wb.dir/libwb/wbExit.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbExit.cpp -o CMakeFiles/wb.dir/libwb/wbExit.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbExit.cpp.o.requires:
 
@@ -178,17 +178,17 @@ CMakeFiles/wb.dir/libwb/wbExit.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wbE
 
 
 CMakeFiles/wb.dir/libwb/wbExport.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbExport.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbExport.cpp
+CMakeFiles/wb.dir/libwb/wbExport.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbExport.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/wb.dir/libwb/wbExport.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbExport.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbExport.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbExport.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbExport.cpp
 
 CMakeFiles/wb.dir/libwb/wbExport.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbExport.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbExport.cpp > CMakeFiles/wb.dir/libwb/wbExport.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbExport.cpp > CMakeFiles/wb.dir/libwb/wbExport.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbExport.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbExport.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbExport.cpp -o CMakeFiles/wb.dir/libwb/wbExport.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbExport.cpp -o CMakeFiles/wb.dir/libwb/wbExport.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbExport.cpp.o.requires:
 
@@ -202,17 +202,17 @@ CMakeFiles/wb.dir/libwb/wbExport.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/w
 
 
 CMakeFiles/wb.dir/libwb/wbFile.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbFile.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbFile.cpp
+CMakeFiles/wb.dir/libwb/wbFile.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbFile.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/wb.dir/libwb/wbFile.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbFile.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbFile.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbFile.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbFile.cpp
 
 CMakeFiles/wb.dir/libwb/wbFile.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbFile.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbFile.cpp > CMakeFiles/wb.dir/libwb/wbFile.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbFile.cpp > CMakeFiles/wb.dir/libwb/wbFile.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbFile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbFile.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbFile.cpp -o CMakeFiles/wb.dir/libwb/wbFile.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbFile.cpp -o CMakeFiles/wb.dir/libwb/wbFile.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbFile.cpp.o.requires:
 
@@ -226,17 +226,17 @@ CMakeFiles/wb.dir/libwb/wbFile.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wbF
 
 
 CMakeFiles/wb.dir/libwb/wbImage.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbImage.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbImage.cpp
+CMakeFiles/wb.dir/libwb/wbImage.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbImage.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/wb.dir/libwb/wbImage.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbImage.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbImage.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbImage.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbImage.cpp
 
 CMakeFiles/wb.dir/libwb/wbImage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbImage.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbImage.cpp > CMakeFiles/wb.dir/libwb/wbImage.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbImage.cpp > CMakeFiles/wb.dir/libwb/wbImage.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbImage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbImage.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbImage.cpp -o CMakeFiles/wb.dir/libwb/wbImage.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbImage.cpp -o CMakeFiles/wb.dir/libwb/wbImage.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbImage.cpp.o.requires:
 
@@ -250,17 +250,17 @@ CMakeFiles/wb.dir/libwb/wbImage.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wb
 
 
 CMakeFiles/wb.dir/libwb/wbImport.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbImport.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbImport.cpp
+CMakeFiles/wb.dir/libwb/wbImport.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbImport.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/wb.dir/libwb/wbImport.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbImport.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbImport.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbImport.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbImport.cpp
 
 CMakeFiles/wb.dir/libwb/wbImport.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbImport.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbImport.cpp > CMakeFiles/wb.dir/libwb/wbImport.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbImport.cpp > CMakeFiles/wb.dir/libwb/wbImport.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbImport.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbImport.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbImport.cpp -o CMakeFiles/wb.dir/libwb/wbImport.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbImport.cpp -o CMakeFiles/wb.dir/libwb/wbImport.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbImport.cpp.o.requires:
 
@@ -274,17 +274,17 @@ CMakeFiles/wb.dir/libwb/wbImport.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/w
 
 
 CMakeFiles/wb.dir/libwb/wbInit.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbInit.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbInit.cpp
+CMakeFiles/wb.dir/libwb/wbInit.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbInit.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/wb.dir/libwb/wbInit.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbInit.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbInit.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbInit.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbInit.cpp
 
 CMakeFiles/wb.dir/libwb/wbInit.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbInit.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbInit.cpp > CMakeFiles/wb.dir/libwb/wbInit.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbInit.cpp > CMakeFiles/wb.dir/libwb/wbInit.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbInit.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbInit.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbInit.cpp -o CMakeFiles/wb.dir/libwb/wbInit.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbInit.cpp -o CMakeFiles/wb.dir/libwb/wbInit.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbInit.cpp.o.requires:
 
@@ -298,17 +298,17 @@ CMakeFiles/wb.dir/libwb/wbInit.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wbI
 
 
 CMakeFiles/wb.dir/libwb/wbLogger.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbLogger.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbLogger.cpp
+CMakeFiles/wb.dir/libwb/wbLogger.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbLogger.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/wb.dir/libwb/wbLogger.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbLogger.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbLogger.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbLogger.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbLogger.cpp
 
 CMakeFiles/wb.dir/libwb/wbLogger.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbLogger.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbLogger.cpp > CMakeFiles/wb.dir/libwb/wbLogger.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbLogger.cpp > CMakeFiles/wb.dir/libwb/wbLogger.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbLogger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbLogger.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbLogger.cpp -o CMakeFiles/wb.dir/libwb/wbLogger.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbLogger.cpp -o CMakeFiles/wb.dir/libwb/wbLogger.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbLogger.cpp.o.requires:
 
@@ -322,17 +322,17 @@ CMakeFiles/wb.dir/libwb/wbLogger.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/w
 
 
 CMakeFiles/wb.dir/libwb/wbMPI.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbMPI.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbMPI.cpp
+CMakeFiles/wb.dir/libwb/wbMPI.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbMPI.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/wb.dir/libwb/wbMPI.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbMPI.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbMPI.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbMPI.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbMPI.cpp
 
 CMakeFiles/wb.dir/libwb/wbMPI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbMPI.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbMPI.cpp > CMakeFiles/wb.dir/libwb/wbMPI.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbMPI.cpp > CMakeFiles/wb.dir/libwb/wbMPI.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbMPI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbMPI.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbMPI.cpp -o CMakeFiles/wb.dir/libwb/wbMPI.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbMPI.cpp -o CMakeFiles/wb.dir/libwb/wbMPI.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbMPI.cpp.o.requires:
 
@@ -346,17 +346,17 @@ CMakeFiles/wb.dir/libwb/wbMPI.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wbMP
 
 
 CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbPPM.cpp
+CMakeFiles/wb.dir/libwb/wbPPM.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbPPM.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/wb.dir/libwb/wbPPM.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbPPM.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbPPM.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbPPM.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbPPM.cpp
 
 CMakeFiles/wb.dir/libwb/wbPPM.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbPPM.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbPPM.cpp > CMakeFiles/wb.dir/libwb/wbPPM.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbPPM.cpp > CMakeFiles/wb.dir/libwb/wbPPM.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbPPM.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbPPM.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbPPM.cpp -o CMakeFiles/wb.dir/libwb/wbPPM.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbPPM.cpp -o CMakeFiles/wb.dir/libwb/wbPPM.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbPPM.cpp.o.requires:
 
@@ -370,17 +370,17 @@ CMakeFiles/wb.dir/libwb/wbPPM.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wbPP
 
 
 CMakeFiles/wb.dir/libwb/wbPath.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbPath.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbPath.cpp
+CMakeFiles/wb.dir/libwb/wbPath.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbPath.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/wb.dir/libwb/wbPath.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbPath.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbPath.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbPath.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbPath.cpp
 
 CMakeFiles/wb.dir/libwb/wbPath.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbPath.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbPath.cpp > CMakeFiles/wb.dir/libwb/wbPath.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbPath.cpp > CMakeFiles/wb.dir/libwb/wbPath.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbPath.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbPath.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbPath.cpp -o CMakeFiles/wb.dir/libwb/wbPath.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbPath.cpp -o CMakeFiles/wb.dir/libwb/wbPath.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbPath.cpp.o.requires:
 
@@ -394,17 +394,17 @@ CMakeFiles/wb.dir/libwb/wbPath.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wbP
 
 
 CMakeFiles/wb.dir/libwb/wbSolution.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbSolution.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbSolution.cpp
+CMakeFiles/wb.dir/libwb/wbSolution.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbSolution.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/wb.dir/libwb/wbSolution.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbSolution.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbSolution.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbSolution.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbSolution.cpp
 
 CMakeFiles/wb.dir/libwb/wbSolution.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbSolution.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbSolution.cpp > CMakeFiles/wb.dir/libwb/wbSolution.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbSolution.cpp > CMakeFiles/wb.dir/libwb/wbSolution.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbSolution.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbSolution.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbSolution.cpp -o CMakeFiles/wb.dir/libwb/wbSolution.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbSolution.cpp -o CMakeFiles/wb.dir/libwb/wbSolution.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbSolution.cpp.o.requires:
 
@@ -418,17 +418,17 @@ CMakeFiles/wb.dir/libwb/wbSolution.cpp.o.provides.build: CMakeFiles/wb.dir/libwb
 
 
 CMakeFiles/wb.dir/libwb/wbSparse.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbSparse.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbSparse.cpp
+CMakeFiles/wb.dir/libwb/wbSparse.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbSparse.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/wb.dir/libwb/wbSparse.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbSparse.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbSparse.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbSparse.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbSparse.cpp
 
 CMakeFiles/wb.dir/libwb/wbSparse.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbSparse.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbSparse.cpp > CMakeFiles/wb.dir/libwb/wbSparse.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbSparse.cpp > CMakeFiles/wb.dir/libwb/wbSparse.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbSparse.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbSparse.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbSparse.cpp -o CMakeFiles/wb.dir/libwb/wbSparse.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbSparse.cpp -o CMakeFiles/wb.dir/libwb/wbSparse.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbSparse.cpp.o.requires:
 
@@ -442,17 +442,17 @@ CMakeFiles/wb.dir/libwb/wbSparse.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/w
 
 
 CMakeFiles/wb.dir/libwb/wbTimer.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbTimer.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbTimer.cpp
+CMakeFiles/wb.dir/libwb/wbTimer.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbTimer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/wb.dir/libwb/wbTimer.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbTimer.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbTimer.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbTimer.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbTimer.cpp
 
 CMakeFiles/wb.dir/libwb/wbTimer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbTimer.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbTimer.cpp > CMakeFiles/wb.dir/libwb/wbTimer.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbTimer.cpp > CMakeFiles/wb.dir/libwb/wbTimer.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbTimer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbTimer.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbTimer.cpp -o CMakeFiles/wb.dir/libwb/wbTimer.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbTimer.cpp -o CMakeFiles/wb.dir/libwb/wbTimer.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbTimer.cpp.o.requires:
 
@@ -466,17 +466,17 @@ CMakeFiles/wb.dir/libwb/wbTimer.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wb
 
 
 CMakeFiles/wb.dir/libwb/wbUtils.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/wbUtils.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/wbUtils.cpp
+CMakeFiles/wb.dir/libwb/wbUtils.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbUtils.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/wb.dir/libwb/wbUtils.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbUtils.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/wbUtils.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/wbUtils.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbUtils.cpp
 
 CMakeFiles/wb.dir/libwb/wbUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/wbUtils.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/wbUtils.cpp > CMakeFiles/wb.dir/libwb/wbUtils.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbUtils.cpp > CMakeFiles/wb.dir/libwb/wbUtils.cpp.i
 
 CMakeFiles/wb.dir/libwb/wbUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/wbUtils.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/wbUtils.cpp -o CMakeFiles/wb.dir/libwb/wbUtils.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/wbUtils.cpp -o CMakeFiles/wb.dir/libwb/wbUtils.cpp.s
 
 CMakeFiles/wb.dir/libwb/wbUtils.cpp.o.requires:
 
@@ -490,17 +490,17 @@ CMakeFiles/wb.dir/libwb/wbUtils.cpp.o.provides.build: CMakeFiles/wb.dir/libwb/wb
 
 
 CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o: CMakeFiles/wb.dir/flags.make
-CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o: /home/u30/mbarmstrong/ece569/labs/libwb/vendor/json11.cpp
+CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o: /home/u30/mbarmstrong/ece569/shadow_removal/libwb/vendor/json11.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o"
-	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o -c /home/u30/mbarmstrong/ece569/labs/libwb/vendor/json11.cpp
+	/cm/local/apps/gcc/6.1.0/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o -c /home/u30/mbarmstrong/ece569/shadow_removal/libwb/vendor/json11.cpp
 
 CMakeFiles/wb.dir/libwb/vendor/json11.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wb.dir/libwb/vendor/json11.cpp.i"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/labs/libwb/vendor/json11.cpp > CMakeFiles/wb.dir/libwb/vendor/json11.cpp.i
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/u30/mbarmstrong/ece569/shadow_removal/libwb/vendor/json11.cpp > CMakeFiles/wb.dir/libwb/vendor/json11.cpp.i
 
 CMakeFiles/wb.dir/libwb/vendor/json11.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wb.dir/libwb/vendor/json11.cpp.s"
-	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/labs/libwb/vendor/json11.cpp -o CMakeFiles/wb.dir/libwb/vendor/json11.cpp.s
+	/cm/local/apps/gcc/6.1.0/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/u30/mbarmstrong/ece569/shadow_removal/libwb/vendor/json11.cpp -o CMakeFiles/wb.dir/libwb/vendor/json11.cpp.s
 
 CMakeFiles/wb.dir/libwb/vendor/json11.cpp.o.requires:
 
@@ -595,6 +595,6 @@ CMakeFiles/wb.dir/clean:
 .PHONY : CMakeFiles/wb.dir/clean
 
 CMakeFiles/wb.dir/depend:
-	cd /home/u30/mbarmstrong/ece569/build_dir && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/u30/mbarmstrong/ece569/labs /home/u30/mbarmstrong/ece569/labs /home/u30/mbarmstrong/ece569/build_dir /home/u30/mbarmstrong/ece569/build_dir /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/wb.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/u30/mbarmstrong/ece569/build_dir && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/u30/mbarmstrong/ece569/shadow_removal /home/u30/mbarmstrong/ece569/shadow_removal /home/u30/mbarmstrong/ece569/build_dir /home/u30/mbarmstrong/ece569/build_dir /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/wb.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/wb.dir/depend
 

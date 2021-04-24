@@ -1,5 +1,10 @@
-/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/Histogram_DatasetGenerator.dir
+/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/Image_DatasetGenerator.dir
+/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/ColorConvertUnitTest_Solution.dir
+/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/ShadowRemoval_Solution.dir
+/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/ErosionUnitTest_Solution.dir
 /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/rebuild_cache.dir
-/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/Histogram_Solution.dir
+/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/ResultIntegrationUnitTest_Solution.dir
+/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/ConvUnitTest_Solution.dir
 /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/wb.dir
 /home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/edit_cache.dir
+/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/OtsuUnitTest_Solution.dir

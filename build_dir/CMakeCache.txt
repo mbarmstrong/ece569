@@ -31,7 +31,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -299,7 +299,7 @@ CUDA_rt_LIBRARY:FILEPATH=/usr/lib64/librt.so
 teachingkit-labs_BINARY_DIR:STATIC=/home/u30/mbarmstrong/ece569/build_dir
 
 //Value Computed by CMake
-teachingkit-labs_SOURCE_DIR:STATIC=/home/u30/mbarmstrong/ece569/labs
+teachingkit-labs_SOURCE_DIR:STATIC=/home/u30/mbarmstrong/ece569/shadow_removal
 
 //Dependencies for the target
 wb_LIB_DEPENDS:STATIC=general;/cm/shared/apps/cuda91/toolkit/9.1.85/lib64/libcudart_static.a;general;-lpthread;general;dl;general;/usr/lib64/librt.so;
@@ -385,7 +385,7 @@ CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/u30/mbarmstrong/ece569/labs
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/u30/mbarmstrong/ece569/shadow_removal
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=0
 //ADVANCED property for variable: CMAKE_LINKER
@@ -448,7 +448,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 CUDA_64_BIT_DEVICE_CODE-ADVANCED:INTERNAL=1
 //List of intermediate files that are part of the cuda dependency
 // scanning.
-CUDA_ADDITIONAL_CLEAN_FILES:INTERNAL=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/Histogram_Solution.dir/hw4/Histogram/Histogram_Solution_generated_solution.cu.o.depend
+CUDA_ADDITIONAL_CLEAN_FILES:INTERNAL=/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/ShadowRemoval_Solution.dir/src/ShadowRemoval_Solution_generated_solution.cu.o.depend;/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/ColorConvertUnitTest_Solution.dir/src/color_conversion/ColorConvertUnitTest_Solution_generated_unit_test.cu.o.depend;/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/OtsuUnitTest_Solution.dir/src/otsu_method/OtsuUnitTest_Solution_generated_unit_test.cu.o.depend;/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/ErosionUnitTest_Solution.dir/src/erosion/ErosionUnitTest_Solution_generated_unit_test.cu.o.depend;/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/ConvUnitTest_Solution.dir/src/convolution/ConvUnitTest_Solution_generated_unit_test.cu.o.depend;/home/u30/mbarmstrong/ece569/build_dir/CMakeFiles/ResultIntegrationUnitTest_Solution.dir/src/result_integration/ResultIntegrationUnitTest_Solution_generated_unit_test.cu.o.depend
 //ADVANCED property for variable: CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE
 CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_BUILD_CUBIN

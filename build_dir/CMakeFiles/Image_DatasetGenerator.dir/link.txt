@@ -1,0 +1,1 @@
+/cm/local/apps/gcc/6.1.0/bin/c++    -Wall -Wno-unused-function -Wno-unused-parameter -Wextra -std=c++11 -Wno-dollar-in-identifier-extension -g   CMakeFiles/Image_DatasetGenerator.dir/src/image_generator.cpp.o  -o Image_DatasetGenerator -rdynamic libwb.a -lpthread -lm -lrt /cm/shared/apps/cuda91/toolkit/9.1.85/lib64/libcudart_static.a -lpthread -ldl -lrt 

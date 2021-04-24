@@ -48,7 +48,7 @@ RM = /usr/bin/cmake3 -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/u30/mbarmstrong/ece569/labs
+CMAKE_SOURCE_DIR = /home/u30/mbarmstrong/ece569/shadow_removal
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/u30/mbarmstrong/ece569/build_dir
@@ -111,30 +111,82 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Histogram_DatasetGenerator
+# Target rules for targets named Image_DatasetGenerator
 
 # Build rule for target.
-Histogram_DatasetGenerator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Histogram_DatasetGenerator
-.PHONY : Histogram_DatasetGenerator
+Image_DatasetGenerator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Image_DatasetGenerator
+.PHONY : Image_DatasetGenerator
 
 # fast build rule for target.
-Histogram_DatasetGenerator/fast:
-	$(MAKE) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/build
-.PHONY : Histogram_DatasetGenerator/fast
+Image_DatasetGenerator/fast:
+	$(MAKE) -f CMakeFiles/Image_DatasetGenerator.dir/build.make CMakeFiles/Image_DatasetGenerator.dir/build
+.PHONY : Image_DatasetGenerator/fast
 
 #=============================================================================
-# Target rules for targets named Histogram_Solution
+# Target rules for targets named ColorConvertUnitTest_Solution
 
 # Build rule for target.
-Histogram_Solution: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Histogram_Solution
-.PHONY : Histogram_Solution
+ColorConvertUnitTest_Solution: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ColorConvertUnitTest_Solution
+.PHONY : ColorConvertUnitTest_Solution
 
 # fast build rule for target.
-Histogram_Solution/fast:
-	$(MAKE) -f CMakeFiles/Histogram_Solution.dir/build.make CMakeFiles/Histogram_Solution.dir/build
-.PHONY : Histogram_Solution/fast
+ColorConvertUnitTest_Solution/fast:
+	$(MAKE) -f CMakeFiles/ColorConvertUnitTest_Solution.dir/build.make CMakeFiles/ColorConvertUnitTest_Solution.dir/build
+.PHONY : ColorConvertUnitTest_Solution/fast
+
+#=============================================================================
+# Target rules for targets named ShadowRemoval_Solution
+
+# Build rule for target.
+ShadowRemoval_Solution: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ShadowRemoval_Solution
+.PHONY : ShadowRemoval_Solution
+
+# fast build rule for target.
+ShadowRemoval_Solution/fast:
+	$(MAKE) -f CMakeFiles/ShadowRemoval_Solution.dir/build.make CMakeFiles/ShadowRemoval_Solution.dir/build
+.PHONY : ShadowRemoval_Solution/fast
+
+#=============================================================================
+# Target rules for targets named ErosionUnitTest_Solution
+
+# Build rule for target.
+ErosionUnitTest_Solution: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ErosionUnitTest_Solution
+.PHONY : ErosionUnitTest_Solution
+
+# fast build rule for target.
+ErosionUnitTest_Solution/fast:
+	$(MAKE) -f CMakeFiles/ErosionUnitTest_Solution.dir/build.make CMakeFiles/ErosionUnitTest_Solution.dir/build
+.PHONY : ErosionUnitTest_Solution/fast
+
+#=============================================================================
+# Target rules for targets named ResultIntegrationUnitTest_Solution
+
+# Build rule for target.
+ResultIntegrationUnitTest_Solution: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ResultIntegrationUnitTest_Solution
+.PHONY : ResultIntegrationUnitTest_Solution
+
+# fast build rule for target.
+ResultIntegrationUnitTest_Solution/fast:
+	$(MAKE) -f CMakeFiles/ResultIntegrationUnitTest_Solution.dir/build.make CMakeFiles/ResultIntegrationUnitTest_Solution.dir/build
+.PHONY : ResultIntegrationUnitTest_Solution/fast
+
+#=============================================================================
+# Target rules for targets named ConvUnitTest_Solution
+
+# Build rule for target.
+ConvUnitTest_Solution: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ConvUnitTest_Solution
+.PHONY : ConvUnitTest_Solution
+
+# fast build rule for target.
+ConvUnitTest_Solution/fast:
+	$(MAKE) -f CMakeFiles/ConvUnitTest_Solution.dir/build.make CMakeFiles/ConvUnitTest_Solution.dir/build
+.PHONY : ConvUnitTest_Solution/fast
 
 #=============================================================================
 # Target rules for targets named wb
@@ -149,32 +201,18 @@ wb/fast:
 	$(MAKE) -f CMakeFiles/wb.dir/build.make CMakeFiles/wb.dir/build
 .PHONY : wb/fast
 
-hw4/Histogram/dataset_generator.o: hw4/Histogram/dataset_generator.cpp.o
+#=============================================================================
+# Target rules for targets named OtsuUnitTest_Solution
 
-.PHONY : hw4/Histogram/dataset_generator.o
+# Build rule for target.
+OtsuUnitTest_Solution: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 OtsuUnitTest_Solution
+.PHONY : OtsuUnitTest_Solution
 
-# target to build an object file
-hw4/Histogram/dataset_generator.cpp.o:
-	$(MAKE) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.o
-.PHONY : hw4/Histogram/dataset_generator.cpp.o
-
-hw4/Histogram/dataset_generator.i: hw4/Histogram/dataset_generator.cpp.i
-
-.PHONY : hw4/Histogram/dataset_generator.i
-
-# target to preprocess a source file
-hw4/Histogram/dataset_generator.cpp.i:
-	$(MAKE) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.i
-.PHONY : hw4/Histogram/dataset_generator.cpp.i
-
-hw4/Histogram/dataset_generator.s: hw4/Histogram/dataset_generator.cpp.s
-
-.PHONY : hw4/Histogram/dataset_generator.s
-
-# target to generate assembly for a file
-hw4/Histogram/dataset_generator.cpp.s:
-	$(MAKE) -f CMakeFiles/Histogram_DatasetGenerator.dir/build.make CMakeFiles/Histogram_DatasetGenerator.dir/hw4/Histogram/dataset_generator.cpp.s
-.PHONY : hw4/Histogram/dataset_generator.cpp.s
+# fast build rule for target.
+OtsuUnitTest_Solution/fast:
+	$(MAKE) -f CMakeFiles/OtsuUnitTest_Solution.dir/build.make CMakeFiles/OtsuUnitTest_Solution.dir/build
+.PHONY : OtsuUnitTest_Solution/fast
 
 libwb/vendor/json11.o: libwb/vendor/json11.cpp.o
 
@@ -689,20 +727,49 @@ libwb/wbUtils.cpp.s:
 	$(MAKE) -f CMakeFiles/wb.dir/build.make CMakeFiles/wb.dir/libwb/wbUtils.cpp.s
 .PHONY : libwb/wbUtils.cpp.s
 
+src/image_generator.o: src/image_generator.cpp.o
+
+.PHONY : src/image_generator.o
+
+# target to build an object file
+src/image_generator.cpp.o:
+	$(MAKE) -f CMakeFiles/Image_DatasetGenerator.dir/build.make CMakeFiles/Image_DatasetGenerator.dir/src/image_generator.cpp.o
+.PHONY : src/image_generator.cpp.o
+
+src/image_generator.i: src/image_generator.cpp.i
+
+.PHONY : src/image_generator.i
+
+# target to preprocess a source file
+src/image_generator.cpp.i:
+	$(MAKE) -f CMakeFiles/Image_DatasetGenerator.dir/build.make CMakeFiles/Image_DatasetGenerator.dir/src/image_generator.cpp.i
+.PHONY : src/image_generator.cpp.i
+
+src/image_generator.s: src/image_generator.cpp.s
+
+.PHONY : src/image_generator.s
+
+# target to generate assembly for a file
+src/image_generator.cpp.s:
+	$(MAKE) -f CMakeFiles/Image_DatasetGenerator.dir/build.make CMakeFiles/Image_DatasetGenerator.dir/src/image_generator.cpp.s
+.PHONY : src/image_generator.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... Histogram_DatasetGenerator"
+	@echo "... Image_DatasetGenerator"
+	@echo "... ColorConvertUnitTest_Solution"
+	@echo "... ShadowRemoval_Solution"
+	@echo "... ErosionUnitTest_Solution"
 	@echo "... rebuild_cache"
-	@echo "... Histogram_Solution"
+	@echo "... ResultIntegrationUnitTest_Solution"
+	@echo "... ConvUnitTest_Solution"
 	@echo "... wb"
 	@echo "... edit_cache"
-	@echo "... hw4/Histogram/dataset_generator.o"
-	@echo "... hw4/Histogram/dataset_generator.i"
-	@echo "... hw4/Histogram/dataset_generator.s"
+	@echo "... OtsuUnitTest_Solution"
 	@echo "... libwb/vendor/json11.o"
 	@echo "... libwb/vendor/json11.i"
 	@echo "... libwb/vendor/json11.s"
@@ -760,6 +827,9 @@ help:
 	@echo "... libwb/wbUtils.o"
 	@echo "... libwb/wbUtils.i"
 	@echo "... libwb/wbUtils.s"
+	@echo "... src/image_generator.o"
+	@echo "... src/image_generator.i"
+	@echo "... src/image_generator.s"
 .PHONY : help
 
 
